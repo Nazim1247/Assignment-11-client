@@ -1,14 +1,33 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../authorize/AuthProvider';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const {user,logoutUser} = useContext(AuthContext);
+
     const links = <div className='flex lg:flex-row flex-col space-x-3'>
     <NavLink to='/' className={({isActive})=>isActive?'text-blue-600':'text-black'}>Home</NavLink>
     <NavLink to='/findTutors' className={({isActive})=>isActive?'text-blue-600':''}>Find tutors</NavLink>
-    <NavLink to='/addTutorials' className={({isActive})=>isActive?'text-blue-600':''}>Add Tutorials</NavLink>
+    {
+      user && <>
+      <NavLink to='/addTutorials' className={({isActive})=>isActive?'text-blue-600':''}>Add Tutorials</NavLink>
     <NavLink to='/myTutorials' className={({isActive})=>isActive?'text-blue-600':''}>My Tutorials</NavLink>
     <NavLink to='/myBookedTutorials' className={({isActive})=>isActive?'text-blue-600':''}>My booked tutors</NavLink>
+      </>
+    }
     </div>
+
+    const handleLogout = ()=>{
+      logoutUser()
+      .then(() =>{
+        console.log('logout successfully!')
+        navigate('/login')
+      })
+      .catch(error =>{
+        console.log(error.message)
+      })
+    }
     return (
         <div className='w-11/12 mx-auto py-4'>
             <div className="navbar">
@@ -68,8 +87,19 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end space-x-2">
-    <Link to='/login' className="btn btn-primary">Login</Link>
-    <Link to='/logout' className="btn btn-primary">Logout</Link>
+    {
+      user ? 
+      <>
+      <div className='flex items-center gap-2'>
+        <button onClick={handleLogout} className="btn btn-primary">Logout</button>
+        <img title={user?.displayName} src={user?.photoURL} className='w-12 h-12 rounded-full' alt="" />
+      </div>
+      </>
+      :
+      <Link to='/login' className="btn btn-primary">Login</Link>
+    }
+    
+    
   </div>
 </div>
         </div>
