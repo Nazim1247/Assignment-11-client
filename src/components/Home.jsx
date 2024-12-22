@@ -30,11 +30,13 @@ const Home = () => {
         <SwiperSlide><img className='w-full h-56 md:h-[480px] rounded-lg' src={carousel3} alt="" /></SwiperSlide>
 
       </Swiper>
+      <div>
+        <h2 className='text-2xl text-center font-bold mt-8'>Language Categories</h2>
       <div className='grid md:grid-cols-2 lg:grid-cols-3 mt-8 gap-4'>
         {
         categories.map(category => <CategoryCard key={category.id} category={category}></CategoryCard>)
         }
-        
+      </div>
       </div>
     </div>
   );
