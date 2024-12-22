@@ -87,7 +87,7 @@ const AddTutorials = () => {
                                     <span className="label-text">Language</span>
                                 </label>
                                 <select className="select select-bordered w-full">
-                                    <option disabled selected>Select Your Language</option>
+                                    <option >Select Your Language</option>
                                     <option>English</option>
                                     <option>Spanish</option>
                                     <option>Arabic</option>
