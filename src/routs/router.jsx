@@ -4,6 +4,10 @@ import Home from "../components/Home";
 import ErrorPage from "../errorPage/ErrorPage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import FindTutors from "../pages/FindTutors";
+import AddTutorials from "../pages/AddTutorials";
+import MyTutorials from "../pages/MyTutorials";
+import MyBookedTutors from "../pages/MyBookedTutors";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +26,22 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/findTutors',
+                element: <FindTutors></FindTutors>
+            },
+            {
+                path: '/addTutorials',
+                element: <AddTutorials></AddTutorials>
+            },
+            {
+                path: '/myTutorials',
+                element: <MyTutorials></MyTutorials>
+            },
+            {
+                path: '/myBookedTutorials',
+                element: <MyBookedTutors></MyBookedTutors>
             },
         ]
     }

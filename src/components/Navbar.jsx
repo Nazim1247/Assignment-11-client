@@ -1,19 +1,20 @@
 import React, { useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../authorize/AuthProvider';
+import logo from '../assets/logo.png'
 
 const Navbar = () => {
   const navigate = useNavigate();
   const {user,logoutUser} = useContext(AuthContext);
 
     const links = <div className='flex lg:flex-row flex-col space-x-3'>
-    <NavLink to='/' className={({isActive})=>isActive?'text-blue-600':'text-black'}>Home</NavLink>
-    <NavLink to='/findTutors' className={({isActive})=>isActive?'text-blue-600':''}>Find tutors</NavLink>
+    <NavLink to='/' className={({isActive})=>isActive?'text-blue-600 btn':'btn'}>Home</NavLink>
+    <NavLink to='/findTutors' className={({isActive})=>isActive?'text-blue-600 btn':'btn'}>Find tutors</NavLink>
     {
       user && <>
-      <NavLink to='/addTutorials' className={({isActive})=>isActive?'text-blue-600':''}>Add Tutorials</NavLink>
-    <NavLink to='/myTutorials' className={({isActive})=>isActive?'text-blue-600':''}>My Tutorials</NavLink>
-    <NavLink to='/myBookedTutorials' className={({isActive})=>isActive?'text-blue-600':''}>My booked tutors</NavLink>
+      <NavLink to='/addTutorials' className={({isActive})=>isActive?'text-blue-600 btn':'btn'}>Add Tutorials</NavLink>
+    <NavLink to='/myTutorials' className={({isActive})=>isActive?'text-blue-600 btn':'btn'}>My Tutorials</NavLink>
+    <NavLink to='/myBookedTutorials' className={({isActive})=>isActive?'text-blue-600 btn':'btn'}>My booked tutors</NavLink>
       </>
     }
     </div>
@@ -31,7 +32,7 @@ const Navbar = () => {
     return (
         <div className='w-11/12 mx-auto py-4'>
             <div className="navbar">
-  <div className="navbar-start w-full">
+  <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
         <svg
@@ -65,7 +66,8 @@ const Navbar = () => {
         
       </ul>
     </div>
-    <a className="text-xl md:text-2xl font-bold">Online Tutor Booking Platform</a>
+    <img title='Online Tutor Booking Platform' className='w-12 h-12 rounded-full' src={logo} alt="" />
+    {/* <a className="text-xl md:text-2xl font-bold">Online Tutor Booking Platform</a> */}
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
