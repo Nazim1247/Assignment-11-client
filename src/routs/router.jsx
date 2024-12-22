@@ -8,6 +8,7 @@ import FindTutors from "../pages/FindTutors";
 import AddTutorials from "../pages/AddTutorials";
 import MyTutorials from "../pages/MyTutorials";
 import MyBookedTutors from "../pages/MyBookedTutors";
+import TutorDetails from "../pages/TutorDetails";
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
             {
                 path: '/myBookedTutorials',
                 element: <MyBookedTutors></MyBookedTutors>
+            },
+            {
+                path: '/details',
+                element: <TutorDetails></TutorDetails>
             },
         ]
     }

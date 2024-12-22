@@ -1,0 +1,25 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const TutorCard = ({ tutor }) => {
+    const { name, photo, language, review } = tutor || {};
+    return (
+        <div className='flex items-center gap-2 border-2 shadow-sm rounded-lg'>
+            <img className='w-36 h-28 p-2' src={photo} alt="" />
+            <div>
+                <h2 className='text-xl font-semibold'>{name}</h2>
+                <div className='flex items-center gap-2'>
+                <p className='font-semibold'>Language:</p>
+                <p>{language}</p>
+                </div>
+                <div className='flex items-center gap-2'>
+                <p className='font-semibold'>Review:</p>
+                <p>{review}</p>
+                </div>
+                <Link to='/details' className='btn btn-xs bg-blue-300'>Details</Link>
+            </div>
+        </div>
+    );
+};
+
+export default TutorCard;
