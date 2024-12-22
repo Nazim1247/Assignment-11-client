@@ -45,7 +45,7 @@ const router = createBrowserRouter([
                 element: <MyBookedTutors></MyBookedTutors>
             },
             {
-                path: '/details',
+                path: '/details/:id',
                 element: <TutorDetails></TutorDetails>
             },
         ]

@@ -1,7 +1,10 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../authorize/AuthProvider';
 
 const AddTutorials = () => {
+    const { user } = useContext(AuthContext);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const form = e.target;
@@ -12,8 +15,25 @@ const AddTutorials = () => {
         const price = form.price.value;
         const description = form.description.value;
         const review = form.review.value;
-        const formData = { name, email, photo, language, price, description, review, };
+        const formData = {
+            tutor: {
+                email,
+                name: user?.displayName,
+                photo: user?.photoURL,
+            },
+            language,
+            price,
+            description,
+            review,
+        };
 
+        try {
+            await axios.post(`${import.meta.env.VITE_API_URL}/tutorials`, formData)
+                .then(data => console.log(data.data))
+        } catch (err) {
+            console.log(err)
+        }
+        console.log(formData)
         // fetch('http://localhost:5000/tutorials', {
         //     method: 'POST',
         //     headers: {
@@ -23,14 +43,6 @@ const AddTutorials = () => {
         // })
         // .then(res => res.json())
         // .then(data => console.log(data))
-
-        try{
-            await axios.post(`${import.meta.env.VITE_API_URL}/tutorials`,formData)
-            .then(data => console.log(data.data))
-        }catch(err){
-            console.log(err)
-        }
-        // console.log(formData)
     }
     return (
         <div>
@@ -47,28 +59,46 @@ const AddTutorials = () => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" name='name' placeholder="name" className="input input-bordered" required />
+                                <input type="text" name='name'
+                                    defaultValue={user?.displayName}
+                                    placeholder="name" className="input input-bordered" required />
                             </div>
                             {/* email  */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                                <input type="email" name='email'
+                                    defaultValue={user?.email}
+                                    placeholder="email" className="input input-bordered" required />
                             </div>
                             {/* photo */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Photo url</span>
                                 </label>
-                                <input type="text" name='photo' placeholder="photo url" className="input input-bordered" required />
+                                <input type="text" name='photo'
+                                    defaultValue={user?.photoURL}
+                                    placeholder="photo url" className="input input-bordered" required />
                             </div>
                             {/* language */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Language</span>
                                 </label>
-                                <input type="text" name='language' placeholder="language" className="input input-bordered" required />
+                                <select className="select select-bordered w-full">
+                                    <option disabled selected>Select Your Language</option>
+                                    <option>English</option>
+                                    <option>Spanish</option>
+                                    <option>Arabic</option>
+                                    <option>French</option>
+                                    <option>Hindi</option>
+                                    <option>Bengali</option>
+                                    <option>Japanese</option>
+                                    <option>German</option>
+                                    <option>Mandarin Chinese</option>
+                                </select>
+                                {/* <input type="text" name='language' placeholder="language" className="input input-bordered" required /> */}
                             </div>
                             {/* price */}
                             <div className="form-control">
