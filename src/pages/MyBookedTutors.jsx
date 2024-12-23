@@ -13,7 +13,6 @@ const MyBookedTutors = () => {
         const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/books/${user?.email}`)
         setBooks(data)
     }
-console.log(books)
 
     return (
         <div className='w-11/12 mx-auto py-8'>
@@ -27,9 +26,7 @@ console.log(books)
                     <th>Language</th>
                     <th>Price</th>
                     <th>Review</th>
-                    {/* <th>Description</th>
-                    <th>Delete</th>
-                    <th>Update</th> */}
+                    
                   </tr>
                 </thead>
                 <tbody>
@@ -51,13 +48,7 @@ console.log(books)
                         </td>
                         <td>{book.price}</td>
                         <td><button className='btn btn-primary'>Review</button></td>
-                        {/* <td>{book.description.substring(0,10)}...</td> */}
-                        {/* <th>
-                          <button onClick={()=>handleDelete(tutor._id)} className="btn btn-ghost btn-xs">x</button>
-                        </th> */}
-                        {/* <th>
-                          <Link to={`/updateTutor/${tutor._id}`} className="btn btn-ghost btn-xs">e</Link>
-                        </th> */}
+                        
                       </tr>)
                   }
                   

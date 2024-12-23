@@ -14,6 +14,7 @@ const FindTutors = () => {
     }
     return (
         <div className='w-11/12 mx-auto py-8'>
+            <h2>{tutors.length}</h2>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4 '>
             {
                 tutors.map(tutor => <TutorCard key={tutor._id} tutor={tutor}></TutorCard>)

@@ -13,10 +13,11 @@ const MyTutorials = () => {
         fetchAllTutors()
     }, [])
     const fetchAllTutors = async () => {
-        const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/tutor/${user?.email}`)
+        const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/all-tutors/${user?.email}`)
         setTutors(data)
     }
     // console.log(tutors)
+    
     const handleDelete = async(id)=>{
         try{
             await axios.delete(`${import.meta.env.VITE_API_URL}/tutor/${id}`)
@@ -52,11 +53,11 @@ const MyTutorials = () => {
             <th>
             <img
             className='w-12 h-12 rounded-full'
-                src={tutor.tutor.photo}
+                src={tutor.photo}
                 alt="" />
             </th>
             <td>
-              {tutor.tutor.name}
+              {tutor.name}
             </td>
             <td>
               {tutor.language}

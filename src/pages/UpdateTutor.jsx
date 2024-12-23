@@ -14,27 +14,25 @@ const UpdateTutor = () => {
         fetchTutorData()
     }, [id])
     const fetchTutorData = async () => {
-        const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/all-tutors/${id}`)
+        const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/all-tutor/${id}`)
         setTutor(data)
     }
-    // console.log(tutor)
+    console.log(tutor)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const form = e.target;
-        // const name = form.name.value;
+        const name = form.name.value;
         const email = form.email.value;
-        // const photo = form.photo.value;
+        const photo = form.photo.value;
         const language = form.language.value;
         const price = form.price.value;
         const description = form.description.value;
         const review = form.review.value;
         const formData = {
-            tutor: {
-                email,
-                name: user?.displayName,
-                photo: user?.photoURL,
-            },
+            name,
+            email,
+            photo,
             language,
             price,
             description,
@@ -67,7 +65,7 @@ const UpdateTutor = () => {
                                     <span className="label-text">Name</span>
                                 </label>
                                 <input type="text" name='name'
-                                    defaultValue={user?.displayName}
+                                    defaultValue={tutor.name}
                                     placeholder="name" className="input input-bordered" readOnly />
                             </div>
                             {/* email  */}
@@ -76,7 +74,7 @@ const UpdateTutor = () => {
                                     <span className="label-text">Email</span>
                                 </label>
                                 <input type="email" name='email'
-                                    defaultValue={user?.email}
+                                    defaultValue={tutor.email}
                                     placeholder="email" className="input input-bordered" readOnly />
                             </div>
                             {/* photo */}
@@ -85,7 +83,7 @@ const UpdateTutor = () => {
                                     <span className="label-text">Photo url</span>
                                 </label>
                                 <input type="text" name='photo'
-                                    defaultValue={user?.photoURL}
+                                    defaultValue={tutor.photo}
                                     placeholder="photo url" className="input input-bordered" required />
                             </div>
                             {/* language */}

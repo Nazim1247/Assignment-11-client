@@ -14,10 +14,10 @@ const TutorDetails = () => {
     },[])
 
     const fetchTutorData = async ()=>{
-        const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/all-tutors/${id}`)
+        const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/all-tutor/${id}`)
         setTutor(data)
     }
-    const { _id, name, photo, language, review, price, email, description } = tutor || {};
+    const { name, photo, language, review, price, email, description } = tutor || {};
 
     const userEmail = user.email;
     // console.log(userEmail)

@@ -1,26 +1,26 @@
 import axios from 'axios';
 import React, { useContext } from 'react';
 import { AuthContext } from '../authorize/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 const AddTutorials = () => {
+    const navigate = useNavigate();
     const { user } = useContext(AuthContext);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const form = e.target;
-        // const name = form.name.value;
+        const name = form.name.value;
         const email = form.email.value;
-        // const photo = form.photo.value;
+        const photo = form.photo.value;
         const language = form.language.value;
         const price = form.price.value;
         const description = form.description.value;
         const review = form.review.value;
         const formData = {
-            tutor: {
-                email,
-                name: user?.displayName,
-                photo: user?.photoURL,
-            },
+            name,
+            email,
+            photo,
             language,
             price,
             description,
@@ -29,11 +29,12 @@ const AddTutorials = () => {
 
         try {
             await axios.post(`${import.meta.env.VITE_API_URL}/tutorials`, formData)
-                .then(data => console.log(data.data))
+            navigate('/myTutorials')
+                // .then(data => console.log({data}))
         } catch (err) {
             console.log(err)
         }
-        // console.log(formData)
+        
         
     }
     return (
@@ -52,6 +53,7 @@ const AddTutorials = () => {
                                     <span className="label-text">Name</span>
                                 </label>
                                 <input type="text" name='name'
+                                defaultValue={user.displayName}
                                     placeholder="name" className="input input-bordered" required />
                             </div>
                             {/* email  */}
@@ -60,6 +62,7 @@ const AddTutorials = () => {
                                     <span className="label-text">Email</span>
                                 </label>
                                 <input type="email" name='email'
+                                defaultValue={user.email}
                                     placeholder="email" className="input input-bordered" required />
                             </div>
                             {/* photo */}
