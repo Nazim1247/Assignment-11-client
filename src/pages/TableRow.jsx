@@ -1,8 +1,16 @@
+import axios from 'axios';
 import React from 'react';
 
 const TableRow = ({tutor}) => {
-    const { tutor: t, language, review, price, description } = tutor || {};
-    console.log(tutor)
+    const { _id, tutor: t, language, review, price, description } = tutor || {};
+    // console.log(tutor)
+    const handleDelete = async(id)=>{
+        try{
+            await axios.delete(`${import.meta.env.VITE_API_URL}/tutor/${id}`)
+        }catch(err){
+            console.log(err)
+        }
+    }
     return (
         <tr>
         <th>
@@ -21,7 +29,7 @@ const TableRow = ({tutor}) => {
         <td>{review}</td>
         <td>{description.substring(0,10)}...</td>
         <th>
-          <button className="btn btn-ghost btn-xs">x</button>
+          <button onClick={()=>handleDelete(_id)} className="btn btn-ghost btn-xs">x</button>
         </th>
         <th>
           <button className="btn btn-ghost btn-xs">e</button>
