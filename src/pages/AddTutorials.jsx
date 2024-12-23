@@ -45,7 +45,7 @@ const AddTutorials = () => {
                         <h1 className="text-2xl font-bold">Add Tutorials</h1>
 
                     </div>
-                    <div className="card bg-base-100 w-full shadow-xl border-2">
+                    <div className="card w-full shadow-xl border-2">
                         <form onSubmit={handleSubmit} className="card-body">
                             {/* name */}
                             <div className="form-control">
@@ -90,7 +90,7 @@ const AddTutorials = () => {
                                     <option>German</option>
                                     <option>Mandarin Chinese</option>
                                 </select>
-                                {/* <input type="text" name='language' placeholder="language" className="input input-bordered" required /> */}
+                                
                             </div>
                             {/* price */}
                             <div className="form-control">

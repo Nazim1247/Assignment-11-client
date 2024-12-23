@@ -57,7 +57,7 @@ const UpdateTutor = () => {
                         <h1 className="text-2xl font-bold">Update Tutorials</h1>
 
                     </div>
-                    <div className="card bg-base-100 w-full shadow-xl border-2">
+                    <div className="card w-full shadow-xl border-2">
                         <form onSubmit={handleSubmit} className="card-body">
                             {/* name */}
                             <div className="form-control">

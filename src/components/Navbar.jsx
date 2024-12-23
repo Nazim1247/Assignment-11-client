@@ -2,11 +2,13 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../authorize/AuthProvider';
 import logo from '../assets/logo.png'
+import { FaToggleOff, FaToggleOn } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const { user, logoutUser } = useContext(AuthContext);
+  const [isDark,setIsDark]=useState(false)
 
   const links = <div className='flex lg:flex-row flex-col space-x-3'>
     <NavLink to='/' className={({ isActive }) => isActive ? 'text-blue-600 btn' : 'btn'}>Home</NavLink>
@@ -33,6 +35,11 @@ const Navbar = () => {
 
   const handleDropdown = () => {
     setIsOpen(!isOpen)
+  }
+
+  const handleTheme = ()=>{
+    setIsDark(!isDark)
+    document.body.classList.toggle('dark')
   }
   return (
     <div className='w-11/12 mx-auto py-4'>
@@ -62,6 +69,8 @@ const Navbar = () => {
             </ul>
           </div>
           <img title='Online Tutor Booking Platform' className='w-12 h-12 rounded-full' src={logo} alt="" />
+
+        <button onClick={handleTheme} className='text-4xl ml-6'>{isDark?<FaToggleOff />:<FaToggleOn />}</button>
 
         </div>
         <div className="navbar-center hidden lg:flex">
