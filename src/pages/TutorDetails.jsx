@@ -19,9 +19,11 @@ const TutorDetails = () => {
     }
     const { _id, name, photo, language, review, price, email, description } = tutor || {};
 
+    const userEmail = user.email;
+    // console.log(userEmail)
     const handleBook = async ()=>{
-        const bookData = { _id, name, photo, language, price, email,  }
-        
+        const bookData = { name, photo, language, price, email, userEmail  }
+
         try {
             await axios.post(`${import.meta.env.VITE_API_URL}/add-book`, bookData)
                 .then(data => console.log(data.data))

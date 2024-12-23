@@ -33,16 +33,8 @@ const AddTutorials = () => {
         } catch (err) {
             console.log(err)
         }
-        console.log(formData)
-        // fetch('http://localhost:5000/tutorials', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type':'application/json'
-        //     },
-        //     body: JSON.stringify(formData)
-        // })
-        // .then(res => res.json())
-        // .then(data => console.log(data))
+        // console.log(formData)
+        
     }
     return (
         <div>
@@ -60,7 +52,6 @@ const AddTutorials = () => {
                                     <span className="label-text">Name</span>
                                 </label>
                                 <input type="text" name='name'
-                                    defaultValue={user?.displayName}
                                     placeholder="name" className="input input-bordered" required />
                             </div>
                             {/* email  */}
@@ -69,7 +60,6 @@ const AddTutorials = () => {
                                     <span className="label-text">Email</span>
                                 </label>
                                 <input type="email" name='email'
-                                    defaultValue={user?.email}
                                     placeholder="email" className="input input-bordered" required />
                             </div>
                             {/* photo */}
@@ -78,7 +68,6 @@ const AddTutorials = () => {
                                     <span className="label-text">Photo url</span>
                                 </label>
                                 <input type="text" name='photo'
-                                    defaultValue={user?.photoURL}
                                     placeholder="photo url" className="input input-bordered" required />
                             </div>
                             {/* language */}

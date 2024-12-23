@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../authorize/AuthProvider';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { MdDeleteForever, MdOutlineSecurityUpdate } from 'react-icons/md';
 
 
 const MyTutorials = () => {
@@ -64,10 +65,10 @@ const MyTutorials = () => {
             <td>{tutor.review}</td>
             <td>{tutor.description.substring(0,10)}...</td>
             <th>
-              <button onClick={()=>handleDelete(tutor._id)} className="btn btn-ghost btn-xs">x</button>
+              <button onClick={()=>handleDelete(tutor._id)} className="btn btn-ghost btn-xs text-2xl"><MdDeleteForever /></button>
             </th>
             <th>
-              <Link to={`/updateTutor/${tutor._id}`} className="btn btn-ghost btn-xs">e</Link>
+              <Link to={`/updateTutor/${tutor._id}`} className="btn btn-ghost btn-xs text-2xl"><MdOutlineSecurityUpdate /></Link>
             </th>
           </tr>)
       }
