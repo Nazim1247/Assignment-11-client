@@ -3,18 +3,25 @@ import { AuthContext } from '../authorize/AuthProvider';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { MdDeleteForever, MdOutlineSecurityUpdate } from 'react-icons/md';
+import useAxiosSecure from '../hooks/UseAxiosSecure';
+
 
 
 const MyTutorials = () => {
     const {user} = useContext(AuthContext);
     const [tutors, setTutors] = useState([]);
 
+    const axiosSecure = useAxiosSecure();
+
     useEffect(() => {
         fetchAllTutors()
     }, [])
     const fetchAllTutors = async () => {
-        const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/all-tutors/${user?.email}`,{withCredentials:true})
-        setTutors(data)
+        // const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/all-tutors/${user?.email}`,{withCredentials:true})
+        // setTutors(data)
+
+        axiosSecure.get(`/all-tutors/${user?.email}`)
+        .then(res => setTutors(res.data));
     }
     // console.log(tutors)
     
