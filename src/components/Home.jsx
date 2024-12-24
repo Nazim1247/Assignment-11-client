@@ -8,6 +8,8 @@ import carousel1 from '../assets/carousel1.png'
 import carousel2 from '../assets/carousel2.jpeg'
 import carousel3 from '../assets/carousel3.jpg'
 import CategoryCard from '../pages/CategoryCard';
+import PublicFeedbacks from '../extraSection/PublicFeedbacks';
+import PlatformFeatures from '../extraSection/PlatformFeatures';
 
 
 const Home = () => {
@@ -37,6 +39,12 @@ const Home = () => {
         categories.map(category => <CategoryCard key={category.id} category={category}></CategoryCard>)
         }
       </div>
+      </div>
+      <div>
+        <PublicFeedbacks></PublicFeedbacks>
+      </div>
+      <div>
+        <PlatformFeatures></PlatformFeatures>
       </div>
     </div>
   );

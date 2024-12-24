@@ -11,7 +11,7 @@ const CategoryCard = ({category}) => {
   //   .catch(err => console.log(err))
   // },[])
   return (
-    <Link to='/findTutors' className='flex items-center justify-between border-2 py-4 px-10 rounded-md'>
+    <Link to='/findTutors' className='flex items-center justify-between border-2 py-4 px-10 rounded-md btn btn-secondary'>
       <p><MdOutlineLanguage /></p>
       <h2>{category.title}</h2>
       <p><MdKeyboardArrowRight /></p>
