@@ -1,13 +1,11 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { AuthContext } from '../authorize/AuthProvider';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const UpdateTutor = () => {
-
-    const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
     const {id} = useParams();
-    // console.log(id)
     const [tutor, setTutor] = useState([]);
 
     useEffect(() => {
@@ -17,7 +15,7 @@ const UpdateTutor = () => {
         const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/all-tutor/${id}`)
         setTutor(data)
     }
-    console.log(tutor)
+    // console.log(tutor)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -41,9 +39,11 @@ const UpdateTutor = () => {
 
         try {
             await axios.put(`${import.meta.env.VITE_API_URL}/update-tutor/${id}`, formData)
-                .then(data => console.log(data.data))
+            toast.success('user login successfully !!')
+            navigate('/myTutorials')
+                // .then(data => console.log(data.data))
         } catch (err) {
-            console.log(err)
+            toast.error(err)
         }
         // console.log(formData)
         
@@ -57,7 +57,7 @@ const UpdateTutor = () => {
                         <h1 className="text-2xl font-bold">Update Tutorials</h1>
 
                     </div>
-                    <div className="card w-full shadow-xl border-2">
+                    <div className="card w-full shadow-xl border-2 text-gray-400">
                         <form onSubmit={handleSubmit} className="card-body">
                             {/* name */}
                             <div className="form-control">

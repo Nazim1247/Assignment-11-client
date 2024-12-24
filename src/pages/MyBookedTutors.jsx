@@ -15,7 +15,8 @@ const MyBookedTutors = () => {
     }
 
     return (
-        <div className='w-11/12 mx-auto py-8'>
+        <div className='w-11/12 mx-auto my-8 border-2 rounded-lg'>
+          <h2>My Booked Tutor: {books.length}</h2>
             <div className="overflow-x-auto">
               <table className="table">
                 {/* head */}

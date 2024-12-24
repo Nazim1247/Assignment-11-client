@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../authorize/AuthProvider';
 import logo from '../assets/logo.png'
 import { FaToggleOff, FaToggleOn } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,11 +26,11 @@ const Navbar = () => {
   const handleLogout = () => {
     logoutUser()
       .then(() => {
-        console.log('logout successfully!')
+        toast.success('user logout successfully !!')
         navigate('/login')
       })
       .catch(error => {
-        console.log(error.message)
+        toast.error(error.message)
       })
   }
 

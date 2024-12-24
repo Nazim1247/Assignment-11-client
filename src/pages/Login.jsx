@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../authorize/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -23,12 +24,13 @@ const Login = () => {
                 })
                 .then(res => {
                     console.log(res.data)
+                    toast.success('user login successfully !!')
                 })
 
                 navigate('/')
             })
             .catch(error => {
-                console.log(error.message)
+                toast.error(error.message)
             })
     }
 
@@ -36,10 +38,11 @@ const Login = () => {
         loginWithGoogle()
             .then(result => {
                 console.log(result.user)
+                toast.success('user login successfully !!')
                 navigate('/')
             })
             .catch(err => {
-                console.log(err.message)
+                toast.error(err.message)
             })
     }
 

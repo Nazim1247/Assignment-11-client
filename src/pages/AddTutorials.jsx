@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext } from 'react';
 import { AuthContext } from '../authorize/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const AddTutorials = () => {
     const navigate = useNavigate();
@@ -30,9 +31,10 @@ const AddTutorials = () => {
         try {
             await axios.post(`${import.meta.env.VITE_API_URL}/tutorials`, formData)
             navigate('/myTutorials')
+            toast.success('tutor added successfully !!')
                 // .then(data => console.log({data}))
         } catch (err) {
-            console.log(err)
+            toast.error(err)
         }
         
         
@@ -54,7 +56,7 @@ const AddTutorials = () => {
                                 </label>
                                 <input type="text" name='name'
                                 defaultValue={user.displayName}
-                                    placeholder="name" className="input input-bordered" required />
+                                    placeholder="name" className="input input-bordered text-gray-400" required />
                             </div>
                             {/* email  */}
                             <div className="form-control">
@@ -63,7 +65,7 @@ const AddTutorials = () => {
                                 </label>
                                 <input type="email" name='email'
                                 defaultValue={user.email}
-                                    placeholder="email" className="input input-bordered" required />
+                                    placeholder="email" className="input input-bordered text-gray-400" required />
                             </div>
                             {/* photo */}
                             <div className="form-control">
@@ -78,7 +80,7 @@ const AddTutorials = () => {
                                 <label className="label">
                                     <span className="label-text">Language</span>
                                 </label>
-                                <select className="select select-bordered w-full" name='language'>
+                                <select className="select select-bordered w-full text-gray-400" name='language'>
                                     <option >Select Your Language</option>
                                     <option>English</option>
                                     <option>Spanish</option>
