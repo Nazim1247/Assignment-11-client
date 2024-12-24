@@ -13,7 +13,7 @@ const MyTutorials = () => {
         fetchAllTutors()
     }, [])
     const fetchAllTutors = async () => {
-        const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/all-tutors/${user?.email}`)
+        const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/all-tutors/${user?.email}`,{withCredentials:true})
         setTutors(data)
     }
     // console.log(tutors)

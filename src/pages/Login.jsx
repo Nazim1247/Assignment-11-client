@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../authorize/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -15,7 +16,15 @@ const Login = () => {
 
         loginUser(email, password)
             .then(result => {
-                console.log(result.user)
+                console.log(result.user.email);
+                const user = {email: email};
+                axios.post(`${import.meta.env.VITE_API_URL}/jwt`,user,{
+                    withCredentials: true
+                })
+                .then(res => {
+                    console.log(res.data)
+                })
+
                 navigate('/')
             })
             .catch(error => {
