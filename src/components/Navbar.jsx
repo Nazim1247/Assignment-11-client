@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const links = <div className='flex lg:flex-row flex-col space-x-3'>
     <NavLink to='/' className={({ isActive }) => isActive ? 'text-blue-600 btn' : 'btn'}>Home</NavLink>
-    <NavLink to='/findTutors' className={({ isActive }) => isActive ? 'text-blue-600 btn' : 'btn'}>Find tutors</NavLink>
+    <NavLink to='/find-tutors' className={({ isActive }) => isActive ? 'text-blue-600 btn' : 'btn'}>Find tutors</NavLink>
     {
       user && <>
         <NavLink to='/addTutorials' className={({ isActive }) => isActive ? 'text-blue-600 btn' : 'btn'}>Add Tutorials</NavLink>
@@ -63,7 +63,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[2] mt-3 w-52 p-2 shadow">
 
               {links}
 
@@ -97,7 +97,7 @@ const Navbar = () => {
                     </div>
                     <ul
                       tabIndex={0}
-                      className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 p-2 shadow items-center mx-auto">
+                      className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[2] mt-3 p-2 shadow items-center mx-auto">
                       <li>
                         <img className='w-12 h-12 rounded-full mx-auto' src={user.photoURL} alt="" />
                       </li>

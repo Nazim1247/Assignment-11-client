@@ -1,21 +1,21 @@
 // import React, { useEffect, useState } from 'react';
 import { MdKeyboardArrowRight, MdOutlineLanguage } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const CategoryCard = ({category}) => {
-  // const [categories, setCategories]=useState([]);
-  // useEffect(()=>{
-  //   fetch('categories.json')
-  //   .then(res => res.json())
-  //   .then(data => setCategories(data))
-  //   .catch(err => console.log(err))
-  // },[])
+
+const CategoryCard = ({language}) => {
+  const navigate = useNavigate();
+
+  const handleCategory = (language)=>{
+    navigate(`/find-tutors?language=${language}`)
+  }
+  
   return (
-    <Link to='/findTutors' className='flex items-center justify-between border-2 py-4 px-10 rounded-md btn btn-secondary'>
+    <div onClick={()=>handleCategory(language.title)} className='flex items-center justify-between border-2 py-4 px-10 rounded-md btn btn-secondary'>
       <p><MdOutlineLanguage /></p>
-      <h2>{category.title}</h2>
+      <h2>{language.title}</h2>
       <p><MdKeyboardArrowRight /></p>
-    </Link>
+    </div>
   );
 };
 
