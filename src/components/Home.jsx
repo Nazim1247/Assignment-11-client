@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -10,9 +10,11 @@ import carousel3 from '../assets/carousel3.jpg'
 import CategoryCard from '../pages/CategoryCard';
 import PublicFeedbacks from '../extraSection/PublicFeedbacks';
 import PlatformFeatures from '../extraSection/PlatformFeatures';
+import { AuthContext } from '../authorize/AuthProvider';
 
 
 const Home = () => {
+  const {countTutor} = useContext(AuthContext);
 
   const [categories, setCategories]=useState([]);
   useEffect(()=>{
@@ -32,6 +34,10 @@ const Home = () => {
         <SwiperSlide><img className='w-full h-56 md:h-[480px] rounded-lg' src={carousel3} alt="" /></SwiperSlide>
 
       </Swiper>
+
+      <div>
+        <h2>Tutor Count: {countTutor}</h2>
+      </div>
       <div>
         <h2 className='text-2xl text-center font-bold mt-8'>Language Categories</h2>
       <div className='grid md:grid-cols-2 lg:grid-cols-3 mt-8 gap-4'>

@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../authorize/AuthProvider';
 
 const TutorDetails = () => {
+    const navigate = useNavigate();
     const {user} = useContext(AuthContext);
     const { id } = useParams();
     const [tutor,setTutor] = useState([]);
@@ -17,16 +18,18 @@ const TutorDetails = () => {
         const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/all-tutor/${id}`)
         setTutor(data)
     }
-    const { name, photo, language, review, price, email, description } = tutor || {};
+    const { _id, name, photo, language, review, price, email, description } = tutor || {};
 
     const userEmail = user.email;
     // console.log(userEmail)
     const handleBook = async ()=>{
-        const bookData = { name, photo, language, price, email, userEmail  }
+        const bookData = {tutorId:_id, name, photo, language, price, email, userEmail  }
 
         try {
             await axios.post(`${import.meta.env.VITE_API_URL}/add-book`, bookData)
                 .then(data => console.log(data.data))
+                navigate('/myBookedTutorials')
+
         } catch (err) {
             console.log(err)
         }
