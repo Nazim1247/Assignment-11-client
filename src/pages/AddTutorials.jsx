@@ -17,7 +17,7 @@ const AddTutorials = () => {
         const language = form.language.value;
         const price = form.price.value;
         const description = form.description.value;
-        const review = form.review.value;
+        const review = parseInt(form.review.value);
         const formData = {
             name,
             email,
@@ -113,7 +113,9 @@ const AddTutorials = () => {
                                 <label className="label">
                                     <span className="label-text">Review</span>
                                 </label>
-                                <input type="text" name='review' placeholder="review" className="input input-bordered" required />
+                                <input type="text" name='review'
+                                defaultValue={0}
+                                placeholder="review" className="input input-bordered" readOnly />
 
                             </div>
                             <div className="form-control mt-6">

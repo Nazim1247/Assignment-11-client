@@ -7,7 +7,6 @@ export const AuthContext = createContext(null)
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
-    const [countTutor, setCountTutor] = useState(0);
 
     const [user, setUser] = useState([]);
     const [loading, setLoading] = useState([]);
@@ -68,8 +67,6 @@ const AuthProvider = ({ children }) => {
     },[])
 
     const authInfo = {
-        countTutor,
-        setCountTutor,
         user,
         loading,
         setUser,

@@ -2,11 +2,12 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../authorize/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const Register = () => {
     const {user,setUser,createUser,loginWithGoogle,updateUser}=useContext(AuthContext);
     const navigate = useNavigate();
-        const handleSubmit = e =>{
+        const handleSubmit = (e) =>{
             e.preventDefault();
             const form = e.target;
             const name = form.name.value;
@@ -17,11 +18,23 @@ const Register = () => {
             // console.log(name,photo,email,password)
     
             createUser(email,password)
-            .then(result =>{
+            .then(async(result) =>{
+
+              // send user to database 
+              const newUser = {name,email,photo};
+              
+              try {
+                await axios.post(`${import.meta.env.VITE_API_URL}/users`, newUser)
+               
+                    // .then(data => console.log({data}))
+            } catch (err) {
+                toast.error(err)
+            }
+
                 console.log(result.user)
                 setUser(user)
                 updateUser({displayName: name, photoURL: photo})
-                toast.success('user login successfully !!')
+                toast.success('user Register successfully !!')
                 navigate('/')
                               
             })
@@ -34,7 +47,7 @@ const Register = () => {
             loginWithGoogle()
                 .then(result => {
                     console.log(result.user)
-                    toast.success('user login successfully !!')
+                    toast.success('user Register successfully !!')
                     navigate('/')
                 })
                 .catch(err => {

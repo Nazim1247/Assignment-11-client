@@ -39,11 +39,11 @@ const UpdateTutor = () => {
 
         try {
             await axios.put(`${import.meta.env.VITE_API_URL}/update-tutor/${id}`, formData)
-            toast.success('user login successfully !!')
+            toast.success('Data Updated successfully !!')
             navigate('/myTutorials')
                 // .then(data => console.log(data.data))
         } catch (err) {
-            toast.error(err)
+            toast.error(err.message)
         }
         // console.log(formData)
         

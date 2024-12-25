@@ -62,15 +62,14 @@ const MyTutorials = () => {
   }
 
   return (
-    <div className='w-11/12 mx-auto mt-8 border-2 rounded-lg'>
-      <h2>My tutorials: {tutors.length}</h2>
+    <div className='w-11/12 mx-auto my-8 border-2 rounded-lg'>
+      <h2 className='text-xl py-1 px-4 rounded-lg bg-orange-400'>({tutors.length}) Tutorials Added</h2>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
-          <thead>
+          <thead className='text-gray-400'>
             <tr>
-              <th>
-              </th>
+              <th>Image</th>
               <th>Name</th>
               <th>Language</th>
               <th>Price</th>

@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../authorize/AuthProvider';
+import { toast } from 'react-toastify';
 
 const TutorDetails = () => {
     const navigate = useNavigate();
@@ -23,15 +24,16 @@ const TutorDetails = () => {
     const userEmail = user.email;
     // console.log(userEmail)
     const handleBook = async ()=>{
-        const bookData = {tutorId:_id, name, photo, language, price, email, userEmail  }
+        const bookData = {tutorId:_id, name, photo, language, price, email, userEmail, review  }
 
         try {
             await axios.post(`${import.meta.env.VITE_API_URL}/add-book`, bookData)
-                .then(data => console.log(data.data))
+                // .then(data => console.log(data.data))
+                toast.success('Tutor Booked successfully !!')
                 navigate('/myBookedTutorials')
 
         } catch (err) {
-            console.log(err)
+            toast.error(err.message)
         }
     }
     return (

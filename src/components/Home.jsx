@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -10,19 +10,40 @@ import carousel3 from '../assets/carousel3.jpg'
 import CategoryCard from '../pages/CategoryCard';
 import PublicFeedbacks from '../extraSection/PublicFeedbacks';
 import PlatformFeatures from '../extraSection/PlatformFeatures';
-import { AuthContext } from '../authorize/AuthProvider';
+import axios from 'axios';
 
 
 const Home = () => {
-  const {countTutor} = useContext(AuthContext);
+  const [users, setUsers] = useState();
+  const [tutors, setTutors] = useState([]);
+  const [categories, setCategories] = useState([]);
 
-  const [categories, setCategories]=useState([]);
-  useEffect(()=>{
-      fetch('categories.json')
+  useEffect(() => {
+
+    fetch('categories.json')
       .then(res => res.json())
       .then(data => setCategories(data))
       .catch(err => console.log(err))
-    },[])
+
+    fetchAllTutors()
+    fetchAllUser()
+  }, [])
+
+  const fetchAllTutors = async () => {
+    const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/all-tutors`)
+    setTutors(data)
+  }
+
+  const fetchAllUser = async () => {
+    const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/all-users`)
+    setUsers(data)
+  }
+
+  const totalReview = tutors.reduce((sum, tutor) =>  sum + tutor.review, 0 );
+
+  // const totalLanguage = tutors.reduce((sum, tutor) =>  sum + tutor.language, 0 )
+  
+  
   return (
     <div className='w-11/12 mx-auto py-8'>
       <Swiper navigation={true} modules={[Navigation, Autoplay]} autoplay={{
@@ -35,16 +56,31 @@ const Home = () => {
 
       </Swiper>
 
-      <div>
-        <h2>Tutor Count: {countTutor}</h2>
+      <div className='grid md:grid-cols-4 gap-6 my-12'>
+        <div className='text-center border-2 rounded-md shadow-md py-4 px-2'>
+          <h2 className='text-5xl font-bold text-blue-700'>{tutors?.length} +</h2>
+          <p className='text-orange-700'>Experienced Tutors</p>
+        </div>
+        <div className='text-center border-2 rounded-md shadow-md py-4 px-2'>
+          <h2 className='text-5xl font-bold text-blue-700'>{totalReview} +</h2>
+          <p className='text-orange-700'>5-Star Tutor Reviews</p>
+        </div>
+        <div className='text-center border-2 rounded-md shadow-md py-4 px-2'>
+          <h2 className='text-5xl font-bold text-blue-700'>9 +</h2>
+          <p className='text-orange-700'>Subjects Taught</p>
+        </div>
+        <div className='text-center border-2 rounded-md shadow-md py-4 px-2'>
+          <h2 className='text-5xl font-bold text-blue-700'>{users?.length} +</h2>
+          <p className='text-orange-700'>All Users</p>
+        </div>
       </div>
       <div>
-        <h2 className='text-2xl text-center font-bold mt-8'>Language Categories</h2>
-      <div className='grid md:grid-cols-2 lg:grid-cols-3 mt-8 gap-4'>
-        {
-        categories.map(language => <CategoryCard key={language.id} language={language}></CategoryCard>)
-        }
-      </div>
+        <h2 className='text-2xl text-center font-bold mt-8'>Find Your Languages</h2>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 mt-8 gap-4'>
+          {
+            categories.map(language => <CategoryCard key={language.id} language={language}></CategoryCard>)
+          }
+        </div>
       </div>
       <div>
         <PublicFeedbacks></PublicFeedbacks>
