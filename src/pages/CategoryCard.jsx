@@ -11,7 +11,7 @@ const CategoryCard = ({language}) => {
   }
   
   return (
-    <div onClick={()=>handleCategory(language.title)} className='flex items-center justify-between border-2 py-4 px-10 rounded-md btn btn-secondary'>
+    <div onClick={()=>handleCategory(language.title)} className='flex items-center justify-between border-2 px-10 rounded-md text-lg btn btn-secondary'>
       <p><MdOutlineLanguage /></p>
       <h2>{language.title}</h2>
       <p><MdKeyboardArrowRight /></p>

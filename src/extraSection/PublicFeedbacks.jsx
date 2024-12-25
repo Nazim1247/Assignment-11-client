@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaUserGraduate } from 'react-icons/fa';
 import { FcFeedback } from 'react-icons/fc';
+import { Link } from 'react-router-dom';
 
 const PublicFeedbacks = () => {
     const feedbacks = [
@@ -52,6 +53,9 @@ const PublicFeedbacks = () => {
                         <p>{feedback.feedback}</p>
                     </div>)
                 }
+            </div>
+            <div className='text-center mt-4'>
+            <Link to='/find-tutors' className='btn btn-secondary'>See All Tutors</Link>
             </div>
         </div>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { GiBookCover } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
 
 const PlatformFeatures = () => {
     const features = [
@@ -44,11 +45,14 @@ const PlatformFeatures = () => {
             <div className='grid md:grid-cols-3 gap-4'>
                 {
                     features.map(feature => <div key={feature.id} className='text-center p-6 border-2 rounded-md space-y-2'>
-                        <p><GiBookCover className='mx-auto text-5xl'/></p>
+                        <p><GiBookCover className='mx-auto text-5xl' /></p>
                         <h2 className='text-xl text-blue-700 font-semibold'>{feature.title}</h2>
                         <p>{feature.description}</p>
                     </div>)
                 }
+            </div>
+            <div className='text-center mt-4'>
+                <Link to='/find-tutors' className='btn btn-secondary'>Collect Tutor</Link>
             </div>
         </div>
     );
