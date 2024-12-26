@@ -7,9 +7,11 @@ import { Helmet } from 'react-helmet';
 import { Zoom } from 'react-awesome-reveal';
 
 const Login = () => {
+
     const navigate = useNavigate();
     const { loginUser, loginWithGoogle } = useContext(AuthContext);
     
+    // console.log(googleUser)
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
@@ -37,9 +39,20 @@ const Login = () => {
 
     const handleGoogleLogin = () => {
         loginWithGoogle()
-            .then(result => {
+            .then(async(result) => {
 
-                console.log(result.user)
+                const userName = result .user.displayName;
+                const userEmail = result.user.email;
+                const userPhoto = result.user.photoURL;
+                const googleUser = {userName,userEmail,userPhoto}
+
+                try {
+                    await axios.post(`${import.meta.env.VITE_API_URL}/users`, googleUser)
+                   
+                } catch (err) {
+                    toast.error(err)
+                }
+
                 toast.success('user login successfully !!')
                 navigate('/')
             })

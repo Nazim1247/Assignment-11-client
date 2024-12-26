@@ -35,8 +35,7 @@ const Register = () => {
                 // update profile
                 updateUser({displayName: name, photoURL: photo})
                 toast.success('user Register successfully !!')
-                navigate('/')
-                              
+                navigate('/')                        
             })
             .catch(error =>{
                 toast.error(error.message)
@@ -46,21 +45,7 @@ const Register = () => {
         const handleGoogleLogin = () => {
             loginWithGoogle()
                 .then(async(result) => {
-
-                  // const name = result.user.displayName.value;
-                  // const email = result.user.email.value;
-                  // console.log(name,email)
-
-                  // send user to server
-                //   try {
-                //     await axios.post(`${import.meta.env.VITE_API_URL}/users`, newUser)
-                   
-                //         // .then(data => console.log({data}))
-                // } catch (err) {
-                //     toast.error(err)
-                // }
-
-                    console.log(result.user)
+                  console.log(result.user)
                     toast.success('user Register successfully !!')
                     navigate('/')
                 })

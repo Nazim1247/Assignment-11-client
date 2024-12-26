@@ -14,6 +14,7 @@ import { Helmet } from 'react-helmet';
 import { Slide, Zoom } from 'react-awesome-reveal';
 
 const Home = () => {
+  
   const [users, setUsers] = useState([]);
   const [tutors, setTutors] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -27,6 +28,7 @@ const Home = () => {
 
     fetchAllTutors()
     fetchAllUser()
+    
   }, [])
 
   const fetchAllTutors = async () => {

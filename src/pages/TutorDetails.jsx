@@ -48,7 +48,7 @@ const TutorDetails = () => {
             </Helmet>
             <div className='flex flex-col md:flex-row items-center gap-2 border-2 shadow-sm rounded-lg lg:w-2/3 mx-auto'>
                     <img className='w-full h-52 lg:w-96 lg:h-80 p-4' src={photo} alt="" />
-                    <div className='px-4'>
+                    <div className='p-4'>
                         <div className='flex items-center gap-2'>
                         <p><FaUserGraduate /></p>
                         <h2 className='text-xl font-semibold'>{name}</h2>
