@@ -4,7 +4,7 @@ import useAuth from './useAuth';
 import { useNavigate } from 'react-router-dom';
 
 const axiosInstance = axios.create({
-    baseURL: 'https://assignment-11-server-ma1gh4hut-nazim1247s-projects.vercel.app',
+    baseURL: `${import.meta.env.VITE_API_URL}`,
     withCredentials: true
 })
 

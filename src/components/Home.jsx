@@ -10,6 +10,7 @@ import CategoryCard from '../pages/CategoryCard';
 import PublicFeedbacks from '../extraSection/PublicFeedbacks';
 import PlatformFeatures from '../extraSection/PlatformFeatures';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -41,6 +42,9 @@ const Home = () => {
 
   return (
     <div className='w-11/12 mx-auto py-8'>
+      <Helmet>
+        <title>Online Tutor Booking Platform | Home</title>
+      </Helmet>
       <Swiper navigation={true} modules={[Navigation, Autoplay]} autoplay={{
         delay: 5000,
         disableOnInteraction: false,

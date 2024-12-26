@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../authorize/AuthProvider';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 const MyBookedTutors = () => {
   
@@ -30,6 +31,9 @@ const MyBookedTutors = () => {
 
   return (
     <div className='w-11/12 mx-auto my-8 border-2 rounded-lg'>
+      <Helmet>
+      <title>Online Tutor Booking Platform | My Booked Tutors</title>
+      </Helmet>
       <h2 className='text-xl py-1 px-4 rounded-lg bg-orange-400'>({books.length}) Tutors Booked</h2>
       <div className="overflow-x-auto">
         <table className="table">
@@ -62,7 +66,7 @@ const MyBookedTutors = () => {
                   {book.language}
                 </td>
                 <td>{book.price}</td>
-                <td><button onClick={()=>handleReview(book.tutorId)} className='btn btn-primary'>Review</button></td>
+                <td><button onClick={()=>handleReview(book.tutorId)} className='btn btn-sm text-white bg-green-600'>Review</button></td>
 
               </tr>)
             }

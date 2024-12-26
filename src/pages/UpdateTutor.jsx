@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -48,13 +49,16 @@ const UpdateTutor = () => {
 
     return (
         <div>
+            <Helmet>
+            <title>Online Tutor Booking Platform | Update Tutor</title>
+            </Helmet>
              <div className="hero">
                 <div className="hero-content flex-col w-11/12 lg:w-2/3 mx-auto py-8">
                     <div className="text-center lg:text-left">
                         <h1 className="text-2xl font-bold">Update Tutorials</h1>
 
                     </div>
-                    <div className="card w-full shadow-xl border-2 text-gray-400">
+                    <div className="card w-full shadow-xl border-2 text-gray-800">
                         <form onSubmit={handleSubmit} className="card-body">
                             {/* name */}
                             <div className="form-control">

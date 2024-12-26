@@ -3,6 +3,7 @@ import { AuthContext } from '../authorize/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -48,6 +49,9 @@ const Login = () => {
 
     return (
         <div>
+            <Helmet>
+            <title>Online Tutor Booking Platform | Login</title>
+            </Helmet>
             <div className="hero py-8">
                 <div className="hero-content flex-col lg:w-2/3 mx-auto border-2 rounded-lg">
                     <div className="text-center lg:text-left">

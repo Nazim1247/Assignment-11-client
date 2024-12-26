@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import TutorCard from './TutorCard';
 import { useSearchParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const FindTutors = () => {
     
@@ -24,6 +25,9 @@ const FindTutors = () => {
 
     return (
         <div className='w-11/12 mx-auto my-8'>
+            <Helmet>
+            <title>Online Tutor Booking Platform | Find Tutor</title>
+            </Helmet>
             <div className='text-center text-gray-500 mb-6'>
                 <input type="text" name='search' onChange={e => setSearch(e.target.value)} placeholder="Find Your Language" className="input input-border w-full max-w-xs" />
             </div>

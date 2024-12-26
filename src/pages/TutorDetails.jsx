@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../authorize/AuthProvider';
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet';
 
 const TutorDetails = () => {
     const navigate = useNavigate();
@@ -37,6 +38,9 @@ const TutorDetails = () => {
     }
     return (
         <div className='w-11/12 mx-auto py-8'>
+            <Helmet>
+            <title>Online Tutor Booking Platform | Tutor Details</title>
+            </Helmet>
             <div className='flex flex-col md:flex-row items-center gap-2 border-2 shadow-sm rounded-lg lg:w-2/3 mx-auto'>
                     <img className='w-full h-52 lg:w-96 lg:h-80 p-4' src={photo} alt="" />
                     <div>

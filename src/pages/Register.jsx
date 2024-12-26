@@ -3,6 +3,7 @@ import { AuthContext } from '../authorize/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
     const {user,setUser,createUser,loginWithGoogle,updateUser}=useContext(AuthContext);
@@ -69,6 +70,9 @@ const Register = () => {
 
     return (
         <div>
+          <Helmet>
+          <title>Online Tutor Booking Platform | Register</title>
+          </Helmet>
             <div className="hero py-8">
               <div className="hero-content flex-col lg:w-2/3 mx-auto border-2 rounded-lg">
                 <div className="text-center lg:text-left">

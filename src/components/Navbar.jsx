@@ -71,7 +71,7 @@ const Navbar = () => {
           </div>
           <img title='Online Tutor Booking Platform' className='w-12 h-12 rounded-full' src={logo} alt="" />
 
-        <button onClick={handleTheme} className='text-4xl ml-6'>{isDark?<FaToggleOff />:<FaToggleOn />}</button>
+        <button onClick={handleTheme} className='text-4xl ml-6'>{isDark?<FaToggleOff title='Click for Light Mode' />:<FaToggleOn title='Click for Dark Mode'/>}</button>
 
         </div>
         <div className="navbar-center hidden lg:flex">

@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../authorize/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet';
 
 const AddTutorials = () => {
     const navigate = useNavigate();
@@ -40,6 +41,9 @@ const AddTutorials = () => {
     
     return (
         <div>
+            <Helmet>
+            <title>Online Tutor Booking Platform | Add Tutorial</title>
+            </Helmet>
             <div className="hero">
                 <div className="hero-content flex-col w-11/12 lg:w-2/3 mx-auto py-8">
                     <div className="text-center lg:text-left">
@@ -55,7 +59,7 @@ const AddTutorials = () => {
                                 </label>
                                 <input type="text" name='name'
                                 defaultValue={user.displayName}
-                                    placeholder="name" className="input input-bordered text-gray-400" required />
+                                    placeholder="name" className="input input-bordered text-gray-800" required />
                             </div>
                             {/* email  */}
                             <div className="form-control">
@@ -64,7 +68,7 @@ const AddTutorials = () => {
                                 </label>
                                 <input type="email" name='email'
                                 defaultValue={user.email}
-                                    placeholder="email" className="input input-bordered text-gray-400" required />
+                                    placeholder="email" className="input input-bordered text-gray-800" required />
                             </div>
                             {/* photo */}
                             <div className="form-control">
@@ -72,14 +76,14 @@ const AddTutorials = () => {
                                     <span className="label-text">Photo url</span>
                                 </label>
                                 <input type="text" name='photo'
-                                    placeholder="photo url" className="input input-bordered" required />
+                                    placeholder="photo url" className="input input-bordered text-gray-800" required />
                             </div>
                             {/* language */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Language</span>
                                 </label>
-                                <select className="select select-bordered w-full text-gray-400" name='language'>
+                                <select className="select select-bordered w-full text-gray-800" name='language'>
                                     <option >Select Your Language</option>
                                     <option>English</option>
                                     <option>Spanish</option>
@@ -98,14 +102,14 @@ const AddTutorials = () => {
                                 <label className="label">
                                     <span className="label-text">Price</span>
                                 </label>
-                                <input type="text" name='price' placeholder="price" className="input input-bordered" required />
+                                <input type="text" name='price' placeholder="price" className="input input-bordered text-gray-800" required />
                             </div>
                             {/* description */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Description</span>
                                 </label>
-                                <input type="text" name='description' placeholder="description" className="input input-bordered" required />
+                                <input type="text" name='description' placeholder="description" className="input input-bordered text-gray-800" required />
                             </div>
                             {/* review */}
                             <div className="form-control">

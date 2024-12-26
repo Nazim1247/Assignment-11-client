@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { MdDeleteForever, MdOutlineSecurityUpdate } from 'react-icons/md';
 import useAxiosSecure from '../hooks/UseAxiosSecure';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const MyTutorials = () => {
   const { user } = useContext(AuthContext);
@@ -56,6 +57,9 @@ const MyTutorials = () => {
 
   return (
     <div className='w-11/12 mx-auto my-8 border-2 rounded-lg'>
+      <Helmet>
+      <title>Online Tutor Booking Platform | My Tutorials</title>
+      </Helmet>
       <h2 className='text-xl py-1 px-4 rounded-lg bg-orange-400'>({tutors.length}) Tutorials Added</h2>
       <div className="overflow-x-auto">
         <table className="table">
@@ -93,10 +97,10 @@ const MyTutorials = () => {
                 <td>{tutor.review}</td>
                 <td>{tutor.description.substring(0, 10)}...</td>
                 <th>
-                  <button onClick={() => handleDelete(tutor._id)} className="btn btn-ghost btn-xs text-2xl"><MdDeleteForever /></button>
+                  <button title='Delete' onClick={() => handleDelete(tutor._id)} className="btn btn-ghost btn-xs text-2xl text-red-600"><MdDeleteForever /></button>
                 </th>
                 <th>
-                  <Link to={`/updateTutor/${tutor._id}`} className="btn btn-ghost btn-xs text-2xl"><MdOutlineSecurityUpdate /></Link>
+                  <Link title='Update' to={`/updateTutor/${tutor._id}`} className="btn btn-ghost btn-xs text-2xl text-green-600"><MdOutlineSecurityUpdate /></Link>
                 </th>
               </tr>)
             }
