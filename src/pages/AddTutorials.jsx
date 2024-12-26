@@ -4,6 +4,7 @@ import { AuthContext } from '../authorize/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Helmet } from 'react-helmet';
+import { Zoom } from 'react-awesome-reveal';
 
 const AddTutorials = () => {
     const navigate = useNavigate();
@@ -40,7 +41,8 @@ const AddTutorials = () => {
     }
     
     return (
-        <div>
+        <Zoom>
+            <div>
             <Helmet>
             <title>Online Tutor Booking Platform | Add Tutorial</title>
             </Helmet>
@@ -129,6 +131,7 @@ const AddTutorials = () => {
                 </div>
             </div>
         </div>
+        </Zoom>
     );
 };
 

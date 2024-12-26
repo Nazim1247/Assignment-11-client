@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
+import { Zoom } from 'react-awesome-reveal';
 
 const Register = () => {
     const {user,setUser,createUser,loginWithGoogle,updateUser}=useContext(AuthContext);
@@ -69,7 +70,8 @@ const Register = () => {
         }
 
     return (
-        <div>
+        <Zoom>
+          <div>
           <Helmet>
           <title>Online Tutor Booking Platform | Register</title>
           </Helmet>
@@ -115,6 +117,7 @@ const Register = () => {
               </div>
             </div>
         </div>
+        </Zoom>
     );
 };
 

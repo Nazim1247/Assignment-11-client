@@ -6,6 +6,7 @@ import { MdDeleteForever, MdOutlineSecurityUpdate } from 'react-icons/md';
 import useAxiosSecure from '../hooks/UseAxiosSecure';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet';
+import { Zoom } from 'react-awesome-reveal';
 
 const MyTutorials = () => {
   const { user } = useContext(AuthContext);
@@ -56,7 +57,8 @@ const MyTutorials = () => {
   }
 
   return (
-    <div className='w-11/12 mx-auto my-8 border-2 rounded-lg'>
+    <Zoom>
+      <div className='w-11/12 mx-auto my-8 border-2 rounded-lg'>
       <Helmet>
       <title>Online Tutor Booking Platform | My Tutorials</title>
       </Helmet>
@@ -110,6 +112,7 @@ const MyTutorials = () => {
         </table>
       </div>
     </div>
+    </Zoom>
   );
 };
 

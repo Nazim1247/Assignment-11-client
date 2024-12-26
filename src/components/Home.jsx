@@ -11,6 +11,7 @@ import PublicFeedbacks from '../extraSection/PublicFeedbacks';
 import PlatformFeatures from '../extraSection/PlatformFeatures';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
+import { Slide, Zoom } from 'react-awesome-reveal';
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -45,6 +46,8 @@ const Home = () => {
       <Helmet>
         <title>Online Tutor Booking Platform | Home</title>
       </Helmet>
+
+      <Zoom>
       <Swiper navigation={true} modules={[Navigation, Autoplay]} autoplay={{
         delay: 5000,
         disableOnInteraction: false,
@@ -54,7 +57,9 @@ const Home = () => {
         <SwiperSlide><img className='w-full h-56 md:h-[480px] rounded-lg' src={carousel3} alt="" /></SwiperSlide>
 
       </Swiper>
+      </Zoom>
 
+      <Slide duration={2000} delay={100} direction='right'>
       <div className='grid md:grid-cols-4 gap-6 my-12'>
         <div className='text-center border-2 rounded-md shadow-md py-4 px-2'>
           <h2 className='text-5xl font-bold text-blue-700'>{tutors?.length} +</h2>
@@ -73,6 +78,8 @@ const Home = () => {
           <p className='text-orange-700'>All Users</p>
         </div>
       </div>
+      </Slide>
+      <Slide duration={2000} delay={100}>
       <div>
         <h2 className='text-2xl text-center font-bold mt-8'>Find Your Languages</h2>
         <div className='grid md:grid-cols-2 lg:grid-cols-3 mt-8 gap-4'>
@@ -81,12 +88,17 @@ const Home = () => {
           }
         </div>
       </div>
+      </Slide>
+      <Zoom>
       <div>
         <PublicFeedbacks></PublicFeedbacks>
       </div>
+      </Zoom>
+      <Zoom>
       <div>
         <PlatformFeatures></PlatformFeatures>
       </div>
+      </Zoom>
     </div>
   );
 };

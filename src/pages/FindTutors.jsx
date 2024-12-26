@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import TutorCard from './TutorCard';
 import { useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { Zoom } from 'react-awesome-reveal';
 
 const FindTutors = () => {
     
@@ -24,7 +25,8 @@ const FindTutors = () => {
     }, [search, language])
 
     return (
-        <div className='w-11/12 mx-auto my-8'>
+        <Zoom>
+            <div className='w-11/12 mx-auto my-8'>
             <Helmet>
             <title>Online Tutor Booking Platform | Find Tutor</title>
             </Helmet>
@@ -40,6 +42,7 @@ const FindTutors = () => {
             </div>
             </div>
         </div>
+        </Zoom>
     );
 };
 export default FindTutors;

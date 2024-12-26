@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Zoom } from 'react-awesome-reveal';
 import { Helmet } from 'react-helmet';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -48,7 +49,8 @@ const UpdateTutor = () => {
     }
 
     return (
-        <div>
+        <Zoom>
+            <div>
             <Helmet>
             <title>Online Tutor Booking Platform | Update Tutor</title>
             </Helmet>
@@ -146,6 +148,7 @@ const UpdateTutor = () => {
                 </div>
             </div>
         </div>
+        </Zoom>
     );
 };
 

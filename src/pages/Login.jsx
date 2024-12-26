@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Helmet } from 'react-helmet';
+import { Zoom } from 'react-awesome-reveal';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -48,7 +49,8 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <Zoom>
+            <div>
             <Helmet>
             <title>Online Tutor Booking Platform | Login</title>
             </Helmet>
@@ -85,6 +87,7 @@ const Login = () => {
                 </div>
             </div>
         </div>
+        </Zoom>
     );
 };
 

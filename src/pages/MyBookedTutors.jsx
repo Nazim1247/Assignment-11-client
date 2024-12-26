@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../authorize/AuthProvider';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
+import { Zoom } from 'react-awesome-reveal';
+import { toast } from 'react-toastify';
 
 const MyBookedTutors = () => {
   
@@ -22,15 +24,15 @@ const MyBookedTutors = () => {
   
     try {
       await axios.put(`${import.meta.env.VITE_API_URL}/update-book/${tutorId}`)
-      
+      toast.success('Review Done successfully !!')
     } catch (err) {
-      // toast.error(err)
-      console.log(err)
+      toast.error(err)
     }
   }
 
   return (
-    <div className='w-11/12 mx-auto my-8 border-2 rounded-lg'>
+    <Zoom>
+      <div className='w-11/12 mx-auto my-8 border-2 rounded-lg'>
       <Helmet>
       <title>Online Tutor Booking Platform | My Booked Tutors</title>
       </Helmet>
@@ -76,6 +78,7 @@ const MyBookedTutors = () => {
         </table>
       </div>
     </div>
+    </Zoom>
   );
 };
 
