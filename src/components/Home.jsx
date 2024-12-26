@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation, Autoplay } from 'swiper/modules';
-
 import carousel1 from '../assets/carousel1.png'
 import carousel2 from '../assets/carousel2.jpeg'
 import carousel3 from '../assets/carousel3.jpg'
@@ -11,7 +10,6 @@ import CategoryCard from '../pages/CategoryCard';
 import PublicFeedbacks from '../extraSection/PublicFeedbacks';
 import PlatformFeatures from '../extraSection/PlatformFeatures';
 import axios from 'axios';
-
 
 const Home = () => {
   const [users, setUsers] = useState();
@@ -41,9 +39,6 @@ const Home = () => {
 
   const totalReview = tutors.reduce((sum, tutor) =>  sum + tutor.review, 0 );
 
-  // const totalLanguage = tutors.reduce((sum, tutor) =>  sum + tutor.language, 0 )
-  
-  
   return (
     <div className='w-11/12 mx-auto py-8'>
       <Swiper navigation={true} modules={[Navigation, Autoplay]} autoplay={{

@@ -34,10 +34,6 @@ const router = createBrowserRouter([
                 path: '/find-tutors',
                 element: <FindTutors></FindTutors>
             },
-            // {
-            //     path: '/find-tutors/:language',
-            //     element: <FindTutors></FindTutors>
-            // },
             {
                 path: '/addTutorials',
                 element: <PrivateRoute>

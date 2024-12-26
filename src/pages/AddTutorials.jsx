@@ -32,13 +32,12 @@ const AddTutorials = () => {
             await axios.post(`${import.meta.env.VITE_API_URL}/tutorials`, formData)
             navigate('/myTutorials')
             toast.success('tutor added successfully !!')
-                // .then(data => console.log({data}))
+                
         } catch (err) {
             toast.error(err)
         }
-        
-        
     }
+    
     return (
         <div>
             <div className="hero">

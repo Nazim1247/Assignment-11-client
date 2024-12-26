@@ -1,17 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../authorize/AuthProvider';
 import axios from 'axios';
-// import { useParams } from 'react-router-dom';
 
 const MyBookedTutors = () => {
-  // const { id } = useParams();
-  // const [booked, setBooked] = useState([]);
+  
   const { user } = useContext(AuthContext);
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
     fetchAllBooks()
-    // fetchTutorData()
+
   }, [])
 
   const fetchAllBooks = async () => {
@@ -19,29 +17,15 @@ const MyBookedTutors = () => {
     setBooks(data)
   }
 
-  // const fetchTutorData = async () => {
-  //   const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/books/${id}`)
-  //   setBooked(data)
-  // }
-
-  // console.log(booked)
-
   const handleReview = async (tutorId) => {
-    // console.log(tutorId)
+  
     try {
       await axios.put(`${import.meta.env.VITE_API_URL}/update-book/${tutorId}`)
-      // if(res.status === 200){
-      //   setBooks((privBook)=> privBook.map((b)=> b._id === id ? { ...b, review: t.review + 1 }:b))
-      // }
-      // toast.success('user login successfully !!')
-      // navigate('/myTutorials')
-      // .then(data => console.log(data.data))
+      
     } catch (err) {
       // toast.error(err)
       console.log(err)
     }
-    
-
   }
 
   return (

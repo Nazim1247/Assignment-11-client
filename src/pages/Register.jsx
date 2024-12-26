@@ -15,8 +15,6 @@ const Register = () => {
             const email = form.email.value;
             const password = form.password.value;
     
-            // console.log(name,photo,email,password)
-    
             createUser(email,password)
             .then(async(result) =>{
 
@@ -26,13 +24,13 @@ const Register = () => {
               try {
                 await axios.post(`${import.meta.env.VITE_API_URL}/users`, newUser)
                
-                    // .then(data => console.log({data}))
             } catch (err) {
                 toast.error(err)
             }
 
                 console.log(result.user)
                 setUser(user)
+                // update profile
                 updateUser({displayName: name, photoURL: photo})
                 toast.success('user Register successfully !!')
                 navigate('/')
@@ -45,7 +43,21 @@ const Register = () => {
 
         const handleGoogleLogin = () => {
             loginWithGoogle()
-                .then(result => {
+                .then(async(result) => {
+
+                  // const name = result.user.displayName.value;
+                  // const email = result.user.email.value;
+                  // console.log(name,email)
+
+                  // send user to server
+                //   try {
+                //     await axios.post(`${import.meta.env.VITE_API_URL}/users`, newUser)
+                   
+                //         // .then(data => console.log({data}))
+                // } catch (err) {
+                //     toast.error(err)
+                // }
+
                     console.log(result.user)
                     toast.success('user Register successfully !!')
                     navigate('/')

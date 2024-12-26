@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import TutorCard from './TutorCard';
 import { useSearchParams } from 'react-router-dom';
 
-
 const FindTutors = () => {
     
     const [tutors, setTutors] = useState([]);
@@ -15,6 +14,7 @@ const FindTutors = () => {
     useEffect(() => {
         
         const fetchAllTutors = async () => {
+            
             const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/tutors?${language?'language='+language:''}&search=${search}`)
             setTutors(data)
 

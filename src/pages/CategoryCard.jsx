@@ -1,7 +1,6 @@
-// import React, { useEffect, useState } from 'react';
+
 import { MdKeyboardArrowRight, MdOutlineLanguage } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
-
 
 const CategoryCard = ({language}) => {
   const navigate = useNavigate();

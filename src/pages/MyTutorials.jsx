@@ -6,8 +6,6 @@ import { MdDeleteForever, MdOutlineSecurityUpdate } from 'react-icons/md';
 import useAxiosSecure from '../hooks/UseAxiosSecure';
 import Swal from 'sweetalert2';
 
-
-
 const MyTutorials = () => {
   const { user } = useContext(AuthContext);
   const [tutors, setTutors] = useState([]);
@@ -18,13 +16,10 @@ const MyTutorials = () => {
     fetchAllTutors()
   }, [])
   const fetchAllTutors = async () => {
-    // const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/all-tutors/${user?.email}`,{withCredentials:true})
-    // setTutors(data)
 
     axiosSecure.get(`/all-tutors/${user?.email}`)
       .then(res => setTutors(res.data));
   }
-  // console.log(tutors)
 
   const handleDelete =  (id) => {
     try {
@@ -53,8 +48,6 @@ const MyTutorials = () => {
         }
       });
 
-
-      // await axios.delete(`${import.meta.env.VITE_API_URL}/tutor/${id}`)
       fetchAllTutors()
     } catch (err) {
       console.log(err)

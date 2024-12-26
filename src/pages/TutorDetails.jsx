@@ -9,7 +9,6 @@ const TutorDetails = () => {
     const {user} = useContext(AuthContext);
     const { id } = useParams();
     const [tutor,setTutor] = useState([]);
-    // // console.log(id)
 
     useEffect(()=>{
         fetchTutorData()
@@ -22,13 +21,13 @@ const TutorDetails = () => {
     const { _id, name, photo, language, review, price, email, description } = tutor || {};
 
     const userEmail = user.email;
-    // console.log(userEmail)
+    
     const handleBook = async ()=>{
         const bookData = {tutorId:_id, name, photo, language, price, email, userEmail, review  }
 
         try {
             await axios.post(`${import.meta.env.VITE_API_URL}/add-book`, bookData)
-                // .then(data => console.log(data.data))
+                
                 toast.success('Tutor Booked successfully !!')
                 navigate('/myBookedTutorials')
 

@@ -79,7 +79,6 @@ const Navbar = () => {
 
             {links}
 
-
           </ul>
         </div>
         <div className="navbar-end space-x-2">
@@ -110,7 +109,6 @@ const Navbar = () => {
               :
               <Link to='/login' className="btn btn-primary">Login</Link>
           }
-
 
         </div>
       </div>

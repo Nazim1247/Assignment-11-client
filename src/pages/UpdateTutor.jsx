@@ -15,7 +15,6 @@ const UpdateTutor = () => {
         const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/all-tutor/${id}`)
         setTutor(data)
     }
-    // console.log(tutor)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -41,12 +40,10 @@ const UpdateTutor = () => {
             await axios.put(`${import.meta.env.VITE_API_URL}/update-tutor/${id}`, formData)
             toast.success('Data Updated successfully !!')
             navigate('/myTutorials')
-                // .then(data => console.log(data.data))
+                
         } catch (err) {
             toast.error(err.message)
         }
-        // console.log(formData)
-        
     }
 
     return (

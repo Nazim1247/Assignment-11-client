@@ -7,25 +7,24 @@ import { toast } from 'react-toastify';
 const Login = () => {
     const navigate = useNavigate();
     const { loginUser, loginWithGoogle } = useContext(AuthContext);
+    
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
 
-        // console.log(email, password)
-
         loginUser(email, password)
             .then(result => {
                 console.log(result.user.email);
-                const user = {email: email};
-                axios.post(`${import.meta.env.VITE_API_URL}/jwt`,user,{
+                const user = { email: email };
+                axios.post(`${import.meta.env.VITE_API_URL}/jwt`, user, {
                     withCredentials: true
                 })
-                .then(res => {
-                    console.log(res.data)
-                    toast.success('user login successfully !!')
-                })
+                    .then(res => {
+                        console.log(res.data)
+                        toast.success('user login successfully !!')
+                    })
 
                 navigate('/')
             })
@@ -37,6 +36,7 @@ const Login = () => {
     const handleGoogleLogin = () => {
         loginWithGoogle()
             .then(result => {
+
                 console.log(result.user)
                 toast.success('user login successfully !!')
                 navigate('/')
@@ -52,7 +52,7 @@ const Login = () => {
                 <div className="hero-content flex-col lg:w-2/3 mx-auto border-2 rounded-lg">
                     <div className="text-center lg:text-left">
                         <h1 className="text-2xl font-bold">Login now!</h1>
-                        
+
                     </div>
                     <div className="card w-full shadow-xl">
                         <form onSubmit={handleSubmit} className="card-body">
