@@ -5,6 +5,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Helmet } from 'react-helmet';
 import { Zoom } from 'react-awesome-reveal';
+import loginAnimation from '../assets/login-lottie.json';
+import Lottie from 'lottie-react';
 
 const Login = () => {
 
@@ -63,17 +65,19 @@ const Login = () => {
 
     return (
         <Zoom>
-            <div>
+            <div className='w-11/12 mx-auto'>
             <Helmet>
             <title>Online Tutor Booking Platform | Login</title>
             </Helmet>
             <div className="hero py-8">
-                <div className="hero-content flex-col lg:w-2/3 mx-auto border-2 rounded-lg">
+                <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-2xl font-bold">Login now!</h1>
+                        
+                        <Lottie animationData={loginAnimation}></Lottie>
 
                     </div>
                     <div className="card w-full shadow-xl">
+                    <h1 className="text-2xl text-center font-bold">Login now!</h1>
                         <form onSubmit={handleSubmit} className="card-body">
                             <div className="form-control">
                                 <label className="label">
