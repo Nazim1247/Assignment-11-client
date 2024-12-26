@@ -21,6 +21,9 @@ const Register = () => {
     
             createUser(email,password)
             .then(async(result) =>{
+              setUser({
+                ...result.user,photoURL:photo
+              })
 
               // send user to database 
               const newUser = {name,email,photo};
@@ -33,7 +36,7 @@ const Register = () => {
             }
 
                 console.log(result.user)
-                setUser(user)
+                
                 // update profile
                 updateUser({displayName: name, photoURL: photo})
                 toast.success('user Register successfully !!')

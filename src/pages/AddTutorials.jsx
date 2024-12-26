@@ -95,7 +95,7 @@ const AddTutorials = () => {
                                     <option>Bengali</option>
                                     <option>Japanese</option>
                                     <option>German</option>
-                                    <option>Mandarin Chinese</option>
+                                    <option>Chinese</option>
                                 </select>
                                 
                             </div>
