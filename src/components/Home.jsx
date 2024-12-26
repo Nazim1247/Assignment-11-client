@@ -12,7 +12,7 @@ import PlatformFeatures from '../extraSection/PlatformFeatures';
 import axios from 'axios';
 
 const Home = () => {
-  const [users, setUsers] = useState();
+  const [users, setUsers] = useState([]);
   const [tutors, setTutors] = useState([]);
   const [categories, setCategories] = useState([]);
 

@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "title": "English",
+      "logo": "/logos/english.png"
+    },
+    {
+      "id": 2,
+      "title": "Spanish",
+      "logo": "/logos/spanish.png"
+    },
+    {
+      "id": 3,
+      "title": "Mandarin Chinese",
+      "logo": "/logos/mandarin.png"
+    },
+    {
+      "id": 4,
+      "title": "Arabic",
+      "logo": "/logos/arabic.png"
+    },
+    {
+      "id": 5,
+      "title": "French",
+      "logo": "/logos/french.png"
+    },
+    {
+      "id": 6,
+      "title": "Hindi",
+      "logo": "/logos/hindi.png"
+    },
+    {
+      "id": 7,
+      "title": "Bengali",
+      "logo": "/logos/bengali.png"
+    },
+    {
+      "id": 8,
+      "title": "Japanese",
+      "logo": "/logos/japanese.png"
+    },
+    {
+      "id": 9,
+      "title": "German",
+      "logo": "/logos/german.png"
+    }
+  ]
+  
