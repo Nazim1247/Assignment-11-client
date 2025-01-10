@@ -52,40 +52,40 @@ const AddTutorials = () => {
                         <h1 className="text-2xl font-bold">Add Tutorials</h1>
 
                     </div>
-                    <div className="card w-full shadow-xl border-2">
+                    <div className="card w-full shadow-xl border">
                         <form onSubmit={handleSubmit} className="card-body">
                             {/* name */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Name</span>
+                                    <span className="text-gray-500">Name</span>
                                 </label>
                                 <input type="text" name='name'
                                 defaultValue={user.displayName}
-                                    placeholder="name" className="input input-bordered text-gray-800" required />
+                                    placeholder="name" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
                             </div>
                             {/* email  */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="text-gray-500">Email</span>
                                 </label>
                                 <input type="email" name='email'
                                 defaultValue={user.email}
-                                    placeholder="email" className="input input-bordered text-gray-800" required />
+                                    placeholder="email" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
                             </div>
                             {/* photo */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Photo url</span>
+                                    <span className="text-gray-500">Photo url</span>
                                 </label>
                                 <input type="text" name='photo'
-                                    placeholder="photo url" className="input input-bordered text-gray-800" required />
+                                    placeholder="photo url" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
                             </div>
                             {/* language */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Language</span>
+                                    <span className="text-gray-500">Language</span>
                                 </label>
-                                <select className="select select-bordered w-full text-gray-800" name='language'>
+                                <select className="select select-bordered w-full bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" name='language'>
                                     <option >Select Your Language</option>
                                     <option>English</option>
                                     <option>Spanish</option>
@@ -102,29 +102,29 @@ const AddTutorials = () => {
                             {/* price */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Price</span>
+                                    <span className="text-gray-500">Price</span>
                                 </label>
-                                <input type="text" name='price' placeholder="price" className="input input-bordered text-gray-800" required />
+                                <input type="text" name='price' placeholder="price" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
                             </div>
                             {/* description */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Description</span>
+                                    <span className="text-gray-500">Description</span>
                                 </label>
-                                <input type="text" name='description' placeholder="description" className="input input-bordered text-gray-800" required />
+                                <input type="text" name='description' placeholder="description" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
                             </div>
                             {/* review */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Review</span>
+                                    <span className="text-gray-500">Review</span>
                                 </label>
                                 <input type="text" name='review'
                                 defaultValue={0}
-                                placeholder="review" className="input input-bordered" readOnly />
+                                placeholder="review" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" readOnly />
 
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Submit</button>
+                                <button className="btn btn-secondary">Submit</button>
                             </div>
                         </form>
                     </div>

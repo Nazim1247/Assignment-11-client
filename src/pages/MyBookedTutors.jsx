@@ -32,7 +32,7 @@ const MyBookedTutors = () => {
 
   return (
     <Zoom>
-      <div className='w-11/12 mx-auto my-8 border-2 rounded-lg'>
+      <div className='w-11/12 mx-auto my-8 border rounded-lg'>
       <Helmet>
       <title>Online Tutor Booking Platform | My Booked Tutors</title>
       </Helmet>
@@ -68,7 +68,7 @@ const MyBookedTutors = () => {
                   {book.language}
                 </td>
                 <td>{book.price}</td>
-                <td><button onClick={()=>handleReview(book.tutorId)} className='btn btn-sm text-white bg-green-600'>Review</button></td>
+                <td><button onClick={()=>handleReview(book.tutorId)} className='btn btn-sm text-white bg-orange-400'>Review</button></td>
 
               </tr>)
             }

@@ -44,9 +44,9 @@ const PlatformFeatures = () => {
             </div>
             <div className='grid md:grid-cols-3 gap-4'>
                 {
-                    features.map(feature => <div key={feature.id} className='text-center p-6 border-2 rounded-md space-y-2 shadow-md'>
+                    features.map(feature => <div key={feature.id} className='text-center p-6 border rounded-md space-y-2 shadow-md'>
                         <p><GiBookCover className='mx-auto text-5xl' /></p>
-                        <h2 className='text-xl text-blue-700 font-semibold'>{feature.title}</h2>
+                        <h2 className='text-xl text-orange-500 font-semibold'>{feature.title}</h2>
                         <p>{feature.description}</p>
                     </div>)
                 }

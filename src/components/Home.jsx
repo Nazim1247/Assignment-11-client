@@ -63,21 +63,21 @@ const Home = () => {
 
       <Slide duration={2000} delay={100} direction='right'>
       <div className='grid md:grid-cols-4 gap-6 my-12'>
-        <div className='text-center border-2 rounded-md shadow-md py-4 px-2'>
-          <h2 className='text-5xl font-bold text-blue-700'>{tutors?.length} +</h2>
-          <p className='text-orange-700'>Experienced Tutors</p>
+        <div className='text-center border rounded-md shadow-md py-4 px-2'>
+          <h2 className='text-3xl font-bold text-secondary'>+{tutors?.length}</h2>
+          <p className='text-orange-500'>Experienced Tutors</p>
         </div>
-        <div className='text-center border-2 rounded-md shadow-md py-4 px-2'>
-          <h2 className='text-5xl font-bold text-blue-700'>{totalReview} +</h2>
-          <p className='text-orange-700'>5-Star Tutor Reviews</p>
+        <div className='text-center border rounded-md shadow-md py-4 px-2'>
+          <h2 className='text-3xl font-bold text-secondary'>+{totalReview}</h2>
+          <p className='text-orange-500'>5-Star Tutor Reviews</p>
         </div>
-        <div className='text-center border-2 rounded-md shadow-md py-4 px-2'>
-          <h2 className='text-5xl font-bold text-blue-700'>9 +</h2>
-          <p className='text-orange-700'>Subjects Taught</p>
+        <div className='text-center border rounded-md shadow-md py-4 px-2'>
+          <h2 className='text-3xl font-bold text-secondary'>+9</h2>
+          <p className='text-orange-500'>Subjects Taught</p>
         </div>
-        <div className='text-center border-2 rounded-md shadow-md py-4 px-2'>
-          <h2 className='text-5xl font-bold text-blue-700'>{users?.length} +</h2>
-          <p className='text-orange-700'>All Users</p>
+        <div className='text-center border rounded-md shadow-md py-4 px-2'>
+          <h2 className='text-3xl font-bold text-secondary'>+{users?.length}</h2>
+          <p className='text-orange-500'>All Users</p>
         </div>
       </div>
       </Slide>

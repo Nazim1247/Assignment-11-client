@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom';
 const TutorCard = ({ tutor }) => {
     const { _id, name, photo, language, review, price } = tutor || {};
     return (
-        <div className='flex items-center gap-2 border-2 shadow-sm rounded-lg'>
-            <img referrerPolicy='no-referrer' className='w-40 h-32 p-2' src={photo} alt="" />
-            <div className='py-2'>
+        <div className='border shadow-sm rounded-lg'>
+            <img referrerPolicy='no-referrer' className='w-full h-40 p-4 object-cover' src={photo} alt="" />
+            <div className='p-4'>
                 <div className='flex items-center gap-2'>
                 <p><FaUserGraduate /></p>
                 <h2 className='text-xl font-semibold'>{name}</h2>
@@ -22,14 +22,14 @@ const TutorCard = ({ tutor }) => {
                 <div className='flex items-center gap-2'>
                     <p><HiOutlineCurrencyDollar /></p>
                 <p className='font-semibold'>price:</p>
-                <p>{price}</p>
+                <p>${price}</p>
                 </div>
                 <div className='flex items-center gap-2'>
                     <p><MdOutlineRateReview /></p>
                 <p className='font-semibold'>Review:</p>
                 <p>{review}</p>
                 </div>
-                <Link to={`/details/${_id}`} className='btn btn-xs bg-blue-300 w-full'>View Details</Link>
+                <Link to={`/details/${_id}`} className='btn btn-xs btn-secondary w-full'>View Details</Link>
             </div>
         </div>
     );

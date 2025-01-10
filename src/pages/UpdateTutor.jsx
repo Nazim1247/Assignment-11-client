@@ -60,42 +60,42 @@ const UpdateTutor = () => {
                         <h1 className="text-2xl font-bold">Update Tutorials</h1>
 
                     </div>
-                    <div className="card w-full shadow-xl border-2 text-gray-800">
+                    <div className="card w-full shadow-xl border text-gray-500">
                         <form onSubmit={handleSubmit} className="card-body">
                             {/* name */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Name</span>
+                                    <span>Name</span>
                                 </label>
                                 <input type="text" name='name'
                                     defaultValue={tutor.name}
-                                    placeholder="name" className="input input-bordered" readOnly />
+                                    placeholder="name" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" readOnly />
                             </div>
                             {/* email  */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span>Email</span>
                                 </label>
                                 <input type="email" name='email'
                                     defaultValue={tutor.email}
-                                    placeholder="email" className="input input-bordered" readOnly />
+                                    placeholder="email" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" readOnly />
                             </div>
                             {/* photo */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Photo url</span>
+                                    <span>Photo url</span>
                                 </label>
                                 <input type="text" name='photo'
                                     defaultValue={tutor.photo}
-                                    placeholder="photo url" className="input input-bordered" required />
+                                    placeholder="photo url" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
                             </div>
                             {/* language */}
                             {
                                 tutor.language && <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Language</span>
+                                    <span>Language</span>
                                 </label>
-                                <select className="select select-bordered w-full"
+                                <select className="select select-bordered w-full bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100"
                                 defaultValue={tutor.language}
                                 name='language'>
                                     <option >Select Your Language</option>
@@ -115,33 +115,33 @@ const UpdateTutor = () => {
                             {/* price */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Price</span>
+                                    <span>Price</span>
                                 </label>
                                 <input type="text" name='price'
                                 defaultValue={tutor.price}
-                                placeholder="price" className="input input-bordered" required />
+                                placeholder="price" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
                             </div>
                             {/* description */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Description</span>
+                                    <span>Description</span>
                                 </label>
                                 <input type="text" name='description' 
                                 defaultValue={tutor.description}
-                                placeholder="description" className="input input-bordered" required />
+                                placeholder="description" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
                             </div>
                             {/* review */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Review</span>
+                                    <span>Review</span>
                                 </label>
                                 <input type="text" name='review'
                                 defaultValue={tutor.review}
-                                placeholder="review" className="input input-bordered" readOnly />
+                                placeholder="review" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" readOnly />
 
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Submit</button>
+                                <button className="btn btn-secondary">Submit</button>
                             </div>
                         </form>
                     </div>

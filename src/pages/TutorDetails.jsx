@@ -46,7 +46,7 @@ const TutorDetails = () => {
             <Helmet>
             <title>Online Tutor Booking Platform | Tutor Details</title>
             </Helmet>
-            <div className='flex flex-col md:flex-row items-center gap-2 border-2 shadow-sm rounded-lg lg:w-2/3 mx-auto'>
+            <div className='flex flex-col md:flex-row items-center gap-2 border shadow-sm rounded-lg lg:w-2/3 mx-auto'>
                     <img className='w-full h-52 lg:w-96 lg:h-80 p-4' src={photo} alt="" />
                     <div className='p-4'>
                         <div className='flex items-center gap-2'>
@@ -80,7 +80,7 @@ const TutorDetails = () => {
                             </div>
                         <p>{description}</p>
                         </div>
-                        <button onClick={handleBook} className='btn btn-sm bg-blue-300 w-full mt-4'>Book</button>
+                        <button onClick={handleBook} className='btn btn-sm btn-secondary w-full mt-4'>Book</button>
                     </div>
                 </div>
         </div>

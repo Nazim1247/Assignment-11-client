@@ -44,9 +44,9 @@ const PublicFeedbacks = () => {
             </div>
             <div className='grid md:grid-cols-3 gap-4'>
                 {
-                    feedbacks.map(feedback => <div key={feedback.id} className='text-center p-6 border-2 rounded-md space-y-2 shadow-md'>
+                    feedbacks.map(feedback => <div key={feedback.id} className='text-center p-6 border rounded-md space-y-2 shadow-md'>
                         <p><FcFeedback className='mx-auto text-5xl'/></p>
-                        <div className='flex gap-2 items-center justify-center text-orange-700'>
+                        <div className='flex gap-2 items-center justify-center text-orange-500'>
                         <p><FaUserGraduate /></p>
                         <h2 className='text-xl font-semibold'>{feedback.name}</h2>
                         </div>

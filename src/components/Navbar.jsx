@@ -12,13 +12,13 @@ const Navbar = () => {
   const [isDark,setIsDark]=useState(false)
 
   const links = <div className='flex lg:flex-row flex-col space-x-3'>
-    <NavLink to='/' className={({ isActive }) => isActive ? 'text-blue-600 btn' : 'btn'}>Home</NavLink>
-    <NavLink to='/find-tutors' className={({ isActive }) => isActive ? 'text-blue-600 btn' : 'btn'}>Find tutors</NavLink>
+    <NavLink to='/' className={({ isActive }) => isActive ? 'btn btn-ghost text-black' : 'btn btn-ghost lg:text-white'}>Home</NavLink>
+    <NavLink to='/find-tutors' className={({ isActive }) => isActive ? 'btn btn-ghost text-black' : 'btn btn-ghost lg:text-white'}>Find tutors</NavLink>
     {
       user && <>
-        <NavLink to='/addTutorials' className={({ isActive }) => isActive ? 'text-blue-600 btn' : 'btn'}>Add Tutorials</NavLink>
-        <NavLink to='/myTutorials' className={({ isActive }) => isActive ? 'text-blue-600 btn' : 'btn'}>My Tutorials</NavLink>
-        <NavLink to='/myBookedTutorials' className={({ isActive }) => isActive ? 'text-blue-600 btn' : 'btn'}>My booked tutors</NavLink>
+        <NavLink to='/addTutorials' className={({ isActive }) => isActive ? 'btn btn-ghost text-black' : 'btn btn-ghost lg:text-white'}>Add Tutorials</NavLink>
+        <NavLink to='/myTutorials' className={({ isActive }) => isActive ? 'btn btn-ghost text-black' : 'btn btn-ghost lg:text-white'}>My Tutorials</NavLink>
+        <NavLink to='/myBookedTutorials' className={({ isActive }) => isActive ? 'btn btn-ghost text-black' : 'btn btn-ghost lg:text-white'}>My booked tutors</NavLink>
       </>
     }
   </div>
@@ -43,14 +43,14 @@ const Navbar = () => {
     document.body.classList.toggle('dark')
   }
   return (
-    <div className='w-11/12 mx-auto py-4'>
+    <div className='w-11/12 mx-auto py-2'>
       <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-8 w-8 text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor">
@@ -71,7 +71,7 @@ const Navbar = () => {
           </div>
           <img title='Online Tutor Booking Platform' className='w-12 h-12 rounded-full' src={logo} alt="" />
 
-        <button onClick={handleTheme} className='text-4xl ml-6'>{isDark?<FaToggleOff title='Click for Light Mode' />:<FaToggleOn title='Click for Dark Mode'/>}</button>
+        <button onClick={handleTheme} className='text-5xl ml-2 text-white'>{isDark?<FaToggleOff title='Click for Light Mode' />:<FaToggleOn title='Click for Dark Mode'/>}</button>
 
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -86,7 +86,7 @@ const Navbar = () => {
             user ?
               <>
                 <div className='flex items-center gap-2'>
-                  <button onClick={handleLogout} className="btn btn-primary">Logout</button>
+                  <button onClick={handleLogout} className="btn btn-ghost text-white">Logout</button>
                   
                   <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
@@ -107,7 +107,7 @@ const Navbar = () => {
                 </div>
               </>
               :
-              <Link to='/login' className="btn btn-primary">Login</Link>
+              <Link to='/login' className="btn btn-ghost text-white">Login</Link>
           }
 
         </div>

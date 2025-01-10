@@ -81,23 +81,23 @@ const Login = () => {
                         <form onSubmit={handleSubmit} className="card-body">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span>Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                                <input type="email" name='email' placeholder="email" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span>Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                                <input type="password" name='password' placeholder="password" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-secondary">Login</button>
                             </div>
-                            <button onClick={handleGoogleLogin} type='button' className='btn mt-2'>Login With Google</button>
+                            <button onClick={handleGoogleLogin} type='button' className='btn btn-ghost mt-2'>Login With Google</button>
                             <Link to='/register' className='text-center mt-2' type='button'>New to this Page? <span className='text-red-600'>Register</span></Link>
                         </form>
                     </div>

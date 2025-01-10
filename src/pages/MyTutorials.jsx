@@ -2,11 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../authorize/AuthProvider';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { MdDeleteForever, MdOutlineSecurityUpdate } from 'react-icons/md';
+import { MdDeleteForever } from 'react-icons/md';
 import useAxiosSecure from '../hooks/UseAxiosSecure';
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet';
 import { Zoom } from 'react-awesome-reveal';
+import { FaEdit } from 'react-icons/fa';
 
 const MyTutorials = () => {
   const { user } = useContext(AuthContext);
@@ -58,7 +59,7 @@ const MyTutorials = () => {
 
   return (
     <Zoom>
-      <div className='w-11/12 mx-auto my-8 border-2 rounded-lg'>
+      <div className='w-11/12 mx-auto my-8 border rounded-lg'>
       <Helmet>
       <title>Online Tutor Booking Platform | My Tutorials</title>
       </Helmet>
@@ -102,7 +103,7 @@ const MyTutorials = () => {
                   <button title='Delete' onClick={() => handleDelete(tutor._id)} className="btn btn-ghost btn-xs text-2xl text-red-600"><MdDeleteForever /></button>
                 </th>
                 <th>
-                  <Link title='Update' to={`/updateTutor/${tutor._id}`} className="btn btn-ghost btn-xs text-2xl text-green-600"><MdOutlineSecurityUpdate /></Link>
+                  <Link title='Update' to={`/updateTutor/${tutor._id}`} className="btn btn-ghost btn-xs text-xl text-orange-400"><FaEdit /></Link>
                 </th>
               </tr>)
             }

@@ -76,32 +76,32 @@ const Register = () => {
                   <form onSubmit={handleSubmit} className="card-body">
                     <div className="form-control">
                       <label className="label">
-                        <span className="label-text">Name</span>
+                        <span>Name</span>
                       </label>
-                      <input type="text" name='name' placeholder="name" className="input input-bordered" required />
+                      <input type="text" name='name' placeholder="name" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
                     </div>
                     <div className="form-control">
                       <label className="label">
-                        <span className="label-text">Photo url</span>
+                        <span>Photo url</span>
                       </label>
-                      <input type="text" name='photo' placeholder="photo url" className="input input-bordered" required />
+                      <input type="text" name='photo' placeholder="photo url" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
                     </div>
                     <div className="form-control">
                       <label className="label">
-                        <span className="label-text">Email</span>
+                        <span>Email</span>
                       </label>
-                      <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                      <input type="email" name='email' placeholder="email" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
                     </div>
                     <div className="form-control">
                       <label className="label">
-                        <span className="label-text">Password</span>
+                        <span>Password</span>
                       </label>
-                      <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                      <input type="password" name='password' placeholder="password" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
                     </div>
                     <div className="form-control mt-6">
-                      <button className="btn btn-primary">Register</button>
+                      <button className="btn btn-secondary">Register</button>
                     </div>
-                    <button onClick={handleGoogleLogin} type='button' className='btn mt-2'>Login With Google</button>
+                    <button onClick={handleGoogleLogin} type='button' className='btn btn-ghost mt-2'>Login With Google</button>
                     <Link to='/login' className='text-center mt-2' type='button'>Already Have an account? <span className='text-red-600'>Login</span></Link>
                   </form>
                 </div>
