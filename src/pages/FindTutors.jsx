@@ -58,8 +58,8 @@ const FindTutors = () => {
                         </svg>
                     </label>
                 </div>
-                <div className='border rounded-lg'>
-                    <h2 className='text-xl py-1 px-4 rounded-lg bg-orange-400 mb-6'>({tutors.length}) Experienced Tutors</h2>
+                <div className=''>
+                    <h2 className='text-xl py-1 px-4 rounded-t-lg bg-orange-400 mb-6'>({tutors.length}) Experienced Tutors</h2>
                     <div className='grid md:grid-cols-3 lg:grid-cols-4 gap-4 '>
                         {
                             tutors.map(tutor => <TutorCard key={tutor._id} tutor={tutor}></TutorCard>)
