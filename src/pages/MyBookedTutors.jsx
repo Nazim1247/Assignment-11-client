@@ -32,11 +32,11 @@ const MyBookedTutors = () => {
 
   return (
     <Zoom>
-      <div className='w-11/12 mx-auto my-8 border rounded-lg'>
+      <div className='w-11/12 mx-auto my-8'>
       <Helmet>
       <title>Online Tutor Booking Platform | My Booked Tutors</title>
       </Helmet>
-      <h2 className='text-xl py-1 px-4 rounded-lg bg-orange-400'>({books.length}) Tutors Booked</h2>
+      <h2 className='text-xl py-1 px-4 rounded-t-lg bg-orange-400'>({books.length}) Tutors Booked</h2>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
@@ -68,7 +68,7 @@ const MyBookedTutors = () => {
                   {book.language}
                 </td>
                 <td>{book.price}</td>
-                <td><button onClick={()=>handleReview(book.tutorId)} className='btn btn-sm text-white bg-orange-400'>Review</button></td>
+                <td><button onClick={()=>handleReview(book.tutorId)} className='btn btn-xs text-white bg-orange-400'>Review</button></td>
 
               </tr>)
             }

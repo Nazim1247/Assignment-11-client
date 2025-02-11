@@ -47,7 +47,7 @@ const TutorDetails = () => {
             <title>Online Tutor Booking Platform | Tutor Details</title>
             </Helmet>
             <div className='flex flex-col md:flex-row items-center gap-2 border shadow-sm rounded-lg lg:w-2/3 mx-auto'>
-                    <img className='w-full h-52 lg:w-96 lg:h-80 p-4' src={photo} alt="" />
+                    <img className='w-full h-52 md:w-96 md:h-80 p-4' src={photo} alt="" />
                     <div className='p-4'>
                         <div className='flex items-center gap-2'>
                         <p><FaUserGraduate /></p>

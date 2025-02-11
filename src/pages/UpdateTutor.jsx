@@ -56,8 +56,8 @@ const UpdateTutor = () => {
             </Helmet>
              <div className="hero">
                 <div className="hero-content flex-col w-11/12 lg:w-2/3 mx-auto py-8">
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-2xl font-bold">Update Tutorials</h1>
+                    <div className="text-center w-full">
+                        <h1 className="text-2xl py-1 px-4 rounded-t-lg bg-orange-400">Update Tutorials</h1>
 
                     </div>
                     <div className="card w-full shadow-xl border text-gray-500">
@@ -141,7 +141,7 @@ const UpdateTutor = () => {
 
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-secondary">Submit</button>
+                                <button className="btn btn-secondary">Update</button>
                             </div>
                         </form>
                     </div>
