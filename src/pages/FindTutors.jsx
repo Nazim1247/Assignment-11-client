@@ -24,7 +24,7 @@ const FindTutors = () => {
         }
         fetchAllTutors()
 
-        handleSort()
+        // handleSort()
     }, [search, language])
 
     const handleSort = async ()=>{
