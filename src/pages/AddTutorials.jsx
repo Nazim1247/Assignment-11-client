@@ -48,8 +48,8 @@ const AddTutorials = () => {
             </Helmet>
             <div className="hero">
                 <div className="hero-content flex-col w-11/12 lg:w-2/3 mx-auto py-8">
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-2xl font-bold">Add Tutorials</h1>
+                    <div className="text-center w-full">
+                        <h1 className="text-2xl py-1 px-4 rounded-t-lg bg-orange-400">Add Tutorials</h1>
 
                     </div>
                     <div className="card w-full shadow-xl border">
