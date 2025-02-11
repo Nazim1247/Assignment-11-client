@@ -59,11 +59,11 @@ const MyTutorials = () => {
 
   return (
     <Zoom>
-      <div className='w-11/12 mx-auto my-8 border rounded-lg'>
+      <div className='w-11/12 mx-auto my-8'>
       <Helmet>
       <title>Online Tutor Booking Platform | My Tutorials</title>
       </Helmet>
-      <h2 className='text-xl py-1 px-4 rounded-lg bg-orange-400'>({tutors.length}) Tutorials Added</h2>
+      <h2 className='text-xl py-1 px-4 rounded-t-lg bg-orange-400'>({tutors.length}) Tutorials Added</h2>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
