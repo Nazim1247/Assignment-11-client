@@ -69,7 +69,7 @@ const Navbar = () => {
 
             </ul>
           </div>
-          <img title='Online Tutor Booking Platform' className='w-12 h-12 rounded-full' src={logo} alt="" />
+          <img title='Online Tutor Booking Platform' className='w-10 h-10 rounded-full' src={logo} alt="" />
 
         <button onClick={handleTheme} className='text-5xl ml-2 text-white'>{isDark?<FaToggleOff title='Click for Light Mode' />:<FaToggleOn title='Click for Dark Mode'/>}</button>
 
@@ -81,17 +81,17 @@ const Navbar = () => {
 
           </ul>
         </div>
-        <div className="navbar-end space-x-2">
+        <div className="navbar-end">
           {
             user ?
               <>
-                <div className='flex items-center gap-2'>
+                <div className='flex items-center'>
                   <button onClick={handleLogout} className="btn btn-ghost text-white">Logout</button>
                   
                   <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                       <div className="w-12 rounded-full">
-                        <img onClick={handleDropdown} title={user?.displayName} src={user?.photoURL} className='w-12 h-12 rounded-full' alt="" />
+                        <img onClick={handleDropdown} title={user?.displayName} src={user?.photoURL} className='w-10 h-10 rounded-full' alt="" />
                       </div>
                     </div>
                     <ul
