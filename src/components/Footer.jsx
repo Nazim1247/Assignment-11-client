@@ -4,7 +4,7 @@ import { FaFacebook, FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <div className='border'>
+        <div className=''>
             <footer className="footer footer-center bg-black text-white rounded p-10">
   <nav className="text-2xl">
     <img className='w-20 h-20 rounded-full' src={logo} alt="" />

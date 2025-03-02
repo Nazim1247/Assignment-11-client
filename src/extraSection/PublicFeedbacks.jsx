@@ -39,12 +39,12 @@ const PublicFeedbacks = () => {
     return (
         <div className='my-8'>
             <div className='text-center lg:w-2/3 mx-auto p-6'>
-            <h2 className='text-2xl font-bold '>See Feedback of the Peoples</h2>
+            <h2 className='text-2xl font-bold '>What Our Customer say</h2>
             <p>Discover what people are saying about their experiences with our platform. Real feedback from real users who have transformed their learning journey with our expert tutors.</p>
             </div>
             <div className='grid md:grid-cols-3 gap-4'>
                 {
-                    feedbacks.map(feedback => <div key={feedback.id} className='text-center p-6 border rounded-md space-y-2 shadow-md'>
+                    feedbacks.map(feedback => <div key={feedback.id} className='text-center p-6 rounded-md space-y-2 shadow-md dark:bg-gray-800'>
                         <p><FcFeedback className='mx-auto text-5xl'/></p>
                         <div className='flex gap-2 items-center justify-center text-orange-500'>
                         <p><FaUserGraduate /></p>

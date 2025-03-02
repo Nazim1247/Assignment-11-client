@@ -44,7 +44,7 @@ const Home = () => {
   const totalReview = tutors.reduce((sum, tutor) =>  sum + tutor.review, 0 );
 
   return (
-    <div className='w-11/12 mx-auto py-8'>
+    <div className='w-11/12 mx-auto py-2'>
       <Helmet>
         <title>Online Tutor Booking Platform | Home</title>
       </Helmet>
@@ -63,19 +63,19 @@ const Home = () => {
 
       <Slide duration={2000} delay={100} direction='right'>
       <div className='grid md:grid-cols-4 gap-6 my-12'>
-        <div className='text-center border rounded-md shadow-md py-4 px-2'>
+        <div className='text-center rounded-md shadow-md py-4 px-2 dark:bg-gray-800'>
           <h2 className='text-3xl font-bold text-secondary'>+{tutors?.length}</h2>
           <p className='text-orange-500'>Experienced Tutors</p>
         </div>
-        <div className='text-center border rounded-md shadow-md py-4 px-2'>
+        <div className='text-center rounded-md shadow-md py-4 px-2 dark:bg-gray-800'>
           <h2 className='text-3xl font-bold text-secondary'>+{totalReview}</h2>
           <p className='text-orange-500'>5-Star Tutor Reviews</p>
         </div>
-        <div className='text-center border rounded-md shadow-md py-4 px-2'>
+        <div className='text-center rounded-md shadow-md py-4 px-2 dark:bg-gray-800'>
           <h2 className='text-3xl font-bold text-secondary'>+9</h2>
           <p className='text-orange-500'>Subjects Taught</p>
         </div>
-        <div className='text-center border rounded-md shadow-md py-4 px-2'>
+        <div className='text-center rounded-md shadow-md py-4 px-2 dark:bg-gray-800'>
           <h2 className='text-3xl font-bold text-secondary'>+{users?.length}</h2>
           <p className='text-orange-500'>All Users</p>
         </div>
