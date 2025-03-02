@@ -7,6 +7,7 @@ export const AuthContext = createContext(null)
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
     const [user, setUser] = useState([]);
     const [loading, setLoading] = useState([]);
@@ -36,9 +37,20 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
     }
 
+    const toggleTheme = ()=>{
+        setTheme((prevTheme)=>(prevTheme === 'light'? 'dark': 'light'))
+    }
+
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth,(currentUser) =>{
             setUser(currentUser)
+
+            if(theme === 'dark'){
+                document.documentElement.classList.add('dark')
+            }else{
+                document.documentElement.classList.remove('dark')
+            }
+            localStorage.setItem('theme', theme)
 
             if(currentUser?.email){
                 const user = {email: currentUser.email}
@@ -62,7 +74,7 @@ const AuthProvider = ({ children }) => {
         return ()=>{
             unSubscribe()
         }
-    },[])
+    },[theme])
 
     const authInfo = {
         user,
@@ -73,6 +85,8 @@ const AuthProvider = ({ children }) => {
         loginWithGoogle,
         updateUser,
         logoutUser,
+        theme,
+        toggleTheme,
     }
     return (
         <AuthContext.Provider value={authInfo}>

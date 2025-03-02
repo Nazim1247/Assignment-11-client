@@ -1,16 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../authorize/AuthProvider';
-import logo from '../assets/logo.png'
-import { FaToggleOff, FaToggleOn } from 'react-icons/fa';
+import logo from '../assets/logo.png';
 import { toast } from 'react-toastify';
+import { MdOutlineLightMode } from 'react-icons/md';
+import { BsFillMoonStarsFill } from 'react-icons/bs';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const { user, logoutUser } = useContext(AuthContext);
-  const [isDark,setIsDark]=useState(false)
-
+  const { user, logoutUser, theme, toggleTheme } = useContext(AuthContext);
+  
   const links = <div className='flex lg:flex-row flex-col space-x-3'>
     <NavLink to='/' className={({ isActive }) => isActive ? 'btn btn-ghost text-black' : 'btn btn-ghost lg:text-white'}>Home</NavLink>
     <NavLink to='/find-tutors' className={({ isActive }) => isActive ? 'btn btn-ghost text-black' : 'btn btn-ghost lg:text-white'}>Find tutors</NavLink>
@@ -38,10 +38,6 @@ const Navbar = () => {
     setIsOpen(!isOpen)
   }
 
-  const handleTheme = ()=>{
-    setIsDark(!isDark)
-    document.body.classList.toggle('dark')
-  }
   return (
     <div className='w-11/12 mx-auto'>
       <div className="navbar">
@@ -71,7 +67,11 @@ const Navbar = () => {
           </div>
           <img title='Online Tutor Booking Platform' className='w-10 h-10 rounded-full' src={logo} alt="" />
 
-        <button onClick={handleTheme} className='text-5xl ml-2 text-white'>{isDark?<FaToggleOff title='Click for Light Mode' />:<FaToggleOn title='Click for Dark Mode'/>}</button>
+        <button onClick={toggleTheme} className='btn btn-ghost text-4xl'>
+        {theme === 'light'?
+      <MdOutlineLightMode className='text-white' title='Click for Dark Mode'/>: 
+      <BsFillMoonStarsFill className='text-gray-500' title='Click for Light Mode' />}
+          </button>
 
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -96,7 +96,7 @@ const Navbar = () => {
                     </div>
                     <ul
                       tabIndex={0}
-                      className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[2] mt-3 p-2 shadow items-center mx-auto">
+                      className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[2] mt-3 p-2 shadow items-center mx-auto dark:bg-gray-900">
                       <li>
                         <img className='w-12 h-12 rounded-full mx-auto' src={user.photoURL} alt="" />
                       </li>
