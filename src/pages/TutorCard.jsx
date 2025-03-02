@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const TutorCard = ({ tutor }) => {
     const { _id, name, photo, language, review, price } = tutor || {};
     return (
-        <div className='border shadow-sm rounded-lg'>
+        <div className='dark:bg-gray-800 shadow-sm rounded-lg'>
             <img referrerPolicy='no-referrer' className='w-full h-40 p-4 object-cover' src={photo} alt="" />
             <div className='p-4'>
                 <div className='flex items-center gap-2'>

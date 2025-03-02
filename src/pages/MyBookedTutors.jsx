@@ -32,7 +32,7 @@ const MyBookedTutors = () => {
 
   return (
     <Zoom>
-      <div className='w-11/12 mx-auto my-8'>
+      <div className='w-11/12 mx-auto my-2'>
       <Helmet>
       <title>Online Tutor Booking Platform | My Booked Tutors</title>
       </Helmet>

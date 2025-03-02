@@ -69,35 +69,33 @@ const Login = () => {
             <Helmet>
             <title>Online Tutor Booking Platform | Login</title>
             </Helmet>
-            <div className="hero py-8">
+            <div className="hero py-2">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                         
                         <Lottie animationData={loginAnimation}></Lottie>
 
                     </div>
-                    <div className="card w-full shadow-xl">
+                    <div className="card w-full shadow dark:bg-gray-800">
                     <h1 className="text-2xl text-center font-bold">Login now!</h1>
                         <form onSubmit={handleSubmit} className="card-body">
                             <div className="form-control">
-                                <label className="label">
+                                <label>
                                     <span>Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
+                                <input type="email" name='email' placeholder="email" className="input input-bordered dark:bg-gray-700" required />
                             </div>
                             <div className="form-control">
-                                <label className="label">
+                                <label>
                                     <span>Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
+                                <input type="password" name='password' placeholder="password" className="input input-bordered dark:bg-gray-700" required />
+                                
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-secondary">Login</button>
                             </div>
-                            <button onClick={handleGoogleLogin} type='button' className='btn btn-ghost mt-2'>Login With Google</button>
+                            <button onClick={handleGoogleLogin} type='button' className='btn btn-ghost mt-2 dark:bg-gray-700'>Login With Google</button>
                             <Link to='/register' className='text-center mt-2' type='button'>New to this Page? <span className='text-red-600'>Register</span></Link>
                         </form>
                     </div>

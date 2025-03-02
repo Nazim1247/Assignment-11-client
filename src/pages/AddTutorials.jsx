@@ -52,40 +52,40 @@ const AddTutorials = () => {
                         <h1 className="text-2xl py-1 px-4 rounded-t-lg bg-orange-400">Add Tutorials</h1>
 
                     </div>
-                    <div className="card w-full shadow-xl border">
+                    <div className="card w-full shadow-xl dark:bg-gray-800">
                         <form onSubmit={handleSubmit} className="card-body">
                             {/* name */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="text-gray-500">Name</span>
+                                    <span>Name</span>
                                 </label>
                                 <input type="text" name='name'
                                 defaultValue={user.displayName}
-                                    placeholder="name" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
+                                    placeholder="name" className="input input-bordered dark:bg-gray-700" required />
                             </div>
                             {/* email  */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="text-gray-500">Email</span>
+                                    <span>Email</span>
                                 </label>
                                 <input type="email" name='email'
                                 defaultValue={user.email}
-                                    placeholder="email" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
+                                    placeholder="email" className="input input-bordered dark:bg-gray-700" required />
                             </div>
                             {/* photo */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="text-gray-500">Photo url</span>
+                                    <span>Photo url</span>
                                 </label>
                                 <input type="text" name='photo'
-                                    placeholder="photo url" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
+                                    placeholder="photo url" className="input input-bordered dark:bg-gray-700" required />
                             </div>
                             {/* language */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="text-gray-500">Language</span>
+                                    <span>Language</span>
                                 </label>
-                                <select className="select select-bordered w-full bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" name='language'>
+                                <select className="select select-bordered w-full dark:bg-gray-700" name='language'>
                                     <option >Select Your Language</option>
                                     <option>English</option>
                                     <option>Spanish</option>
@@ -102,25 +102,25 @@ const AddTutorials = () => {
                             {/* price */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="text-gray-500">Price</span>
+                                    <span>Price</span>
                                 </label>
-                                <input type="text" name='price' placeholder="price" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
+                                <input type="text" name='price' placeholder="price" className="input input-bordered dark:bg-gray-700" required />
                             </div>
                             {/* description */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="text-gray-500">Description</span>
+                                    <span>Description</span>
                                 </label>
-                                <input type="text" name='description' placeholder="description" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
+                                <input type="text" name='description' placeholder="description" className="input input-bordered dark:bg-gray-700" required />
                             </div>
                             {/* review */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="text-gray-500">Review</span>
+                                    <span>Review</span>
                                 </label>
                                 <input type="text" name='review'
                                 defaultValue={0}
-                                placeholder="review" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" readOnly />
+                                placeholder="review" className="input input-bordered dark:bg-gray-700" readOnly />
 
                             </div>
                             <div className="form-control mt-6">

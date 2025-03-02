@@ -38,7 +38,7 @@ const FindTutors = () => {
 
     return (
         <Zoom>
-            <div className='w-11/12 mx-auto my-8'>
+            <div className='w-11/12 mx-auto my-2'>
                 <Helmet>
                     <title>Online Tutor Booking Platform | Find Tutor</title>
                 </Helmet>

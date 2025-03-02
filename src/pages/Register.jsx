@@ -65,43 +65,43 @@ const Register = () => {
           <Helmet>
           <title>Online Tutor Booking Platform | Register</title>
           </Helmet>
-            <div className="hero py-8">
+            <div className="hero py-2">
               <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left lg:w-[600px]">
                   
                   <Lottie animationData={registerAnimation}></Lottie>
                 </div>
-                <div className="card w-full shadow-xl">
+                <div className="card w-full shadow dark:bg-gray-800">
                 <h1 className="text-2xl text-center font-bold">Register now!</h1>
                   <form onSubmit={handleSubmit} className="card-body">
                     <div className="form-control">
-                      <label className="label">
+                      <label>
                         <span>Name</span>
                       </label>
-                      <input type="text" name='name' placeholder="name" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
+                      <input type="text" name='name' placeholder="name" className="input input-bordered dark:bg-gray-700" required />
                     </div>
                     <div className="form-control">
-                      <label className="label">
+                      <label>
                         <span>Photo url</span>
                       </label>
-                      <input type="text" name='photo' placeholder="photo url" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
+                      <input type="text" name='photo' placeholder="photo url" className="input input-bordered dark:bg-gray-700" required />
                     </div>
                     <div className="form-control">
-                      <label className="label">
+                      <label>
                         <span>Email</span>
                       </label>
-                      <input type="email" name='email' placeholder="email" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
+                      <input type="email" name='email' placeholder="email" className="input input-bordered dark:bg-gray-700" required />
                     </div>
                     <div className="form-control">
-                      <label className="label">
+                      <label>
                         <span>Password</span>
                       </label>
-                      <input type="password" name='password' placeholder="password" className="input input-bordered bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" required />
+                      <input type="password" name='password' placeholder="password" className="input input-bordered dark:bg-gray-700" required />
                     </div>
                     <div className="form-control mt-6">
                       <button className="btn btn-secondary">Register</button>
                     </div>
-                    <button onClick={handleGoogleLogin} type='button' className='btn btn-ghost mt-2'>Login With Google</button>
+                    <button onClick={handleGoogleLogin} type='button' className='btn btn-ghost mt-2 dark:bg-gray-700'>Login With Google</button>
                     <Link to='/login' className='text-center mt-2' type='button'>Already Have an account? <span className='text-red-600'>Login</span></Link>
                   </form>
                 </div>
